@@ -36,6 +36,17 @@ export default {
         darkText: '#2A211C',
         mutedText: '#7A6A5E',
         roseAccent: '#B5465A',
+        luxury: {
+          bg: '#100C0A',
+          bgSecondary: '#1A120E',
+          espresso: '#2B1D14',
+          gold: '#D9B46A',
+          goldHighlight: '#F0D394',
+          goldHover: '#B88A44',
+          whiteText: '#F8F5F0',
+          secondaryText: '#B8AEA8',
+          borderGold: 'rgba(217, 180, 106, 0.35)',
+        },
       },
       fontFamily: {
         sans: ['Montserrat', 'system-ui', 'sans-serif'],

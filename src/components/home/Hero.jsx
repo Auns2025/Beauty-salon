@@ -1,221 +1,201 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sparkles, Calendar, ArrowRight, Star, ShieldCheck, Home, CheckCircle2 } from 'lucide-react';
+import { Calendar, ArrowRight, ShieldCheck, Home, CheckCircle2, Star } from 'lucide-react';
 import { BUSINESS_CONFIG } from '../../config/business';
-import Button from '../common/Button';
-import HeroCanvasDust from './HeroCanvasDust';
+import HeroVisual from './HeroVisual';
 
 export default function Hero() {
+  // Motion easing and animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemFadeUp = {
+    hidden: { opacity: 0, y: 22 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
-    <section className="relative min-h-[95vh] sm:min-h-screen bg-espresso text-ivory flex items-center pt-28 pb-20 overflow-hidden">
-      {/* 1. Cinematic Background Image & Lighting */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero/hero-beauty.jpg"
-          alt="SM Home Beauty Luxury Radiance"
-          className="w-full h-full object-cover object-top sm:object-center opacity-30 filter brightness-90 saturate-110"
+    <section className="relative w-full min-h-[95vh] lg:min-h-screen bg-[#100C0A] text-[#F8F5F0] overflow-hidden flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 lg:pb-24">
+      {/* 1. Refined Luxury Ambient Lighting & Vignette Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Soft radial golden warmth at the top center */}
+        <div 
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[550px] opacity-40 blur-3xl"
+          style={{
+            background: 'radial-gradient(ellipse at 50% 0%, rgba(217,180,106,0.18) 0%, rgba(43,29,20,0.35) 45%, transparent 75%)'
+          }}
         />
-        {/* Layered luxury dark espresso & radial gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-espresso-900 via-espresso/95 to-espresso/70" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/15 via-transparent to-espresso-900" />
-        <div className="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-espresso/80" />
+
+        {/* Deep ambient vignette from edges */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A120E]/40 via-transparent to-[#100C0A]" />
+        
+        {/* Subtle warm glow focused behind right-side imagery */}
+        <div 
+          className="absolute top-1/4 right-0 w-[600px] h-[600px] opacity-25 blur-[120px]"
+          style={{
+            background: 'radial-gradient(circle, rgba(217,180,106,0.2) 0%, rgba(43,29,20,0.3) 60%, transparent 80%)'
+          }}
+        />
       </div>
 
-      {/* 2. Ambient Golden Dust Particles Canvas */}
-      <HeroCanvasDust />
-
-      {/* 3. Main Hero Content Container */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+      {/* 2. Main Hero Container (Max Width 1440px) */}
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
-          {/* Left Editorial Text Column */}
+          {/* ============================================================== */}
+          {/* LEFT EDITORIAL COLUMN (~52%)                                   */}
+          {/* ============================================================== */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-7 space-y-6 sm:space-y-7"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="lg:col-span-7 flex flex-col justify-center space-y-6 sm:space-y-7"
           >
-            {/* Luxury Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/40 text-gold-light text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.28em] backdrop-blur-md shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold animate-ping" />
-              <span>SM Home Beauty · Studio & At-Home Concierge</span>
+            {/* Step 1: Small Minimal Outlined Eyebrow Pill */}
+            <motion.div variants={itemFadeUp} className="flex items-center">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-[3px] bg-[#2B1D14]/50 border border-[rgba(217,180,106,0.35)] backdrop-blur-sm text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.25em] text-[#D9B46A] uppercase shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D9B46A]" />
+                <span>SM HOME BEAUTY · STUDIO & AT-HOME CONCIERGE</span>
+              </div>
+            </motion.div>
+
+            {/* Step 2: Bold Contemporary Luxury Editorial Heading */}
+            <motion.div variants={itemFadeUp} className="space-y-1">
+              <h1 className="font-sans font-black text-5xl sm:text-7xl lg:text-[76px] xl:text-[84px] tracking-[-0.03em] leading-[0.98] uppercase">
+                <span className="block text-[#F8F5F0]">
+                  REDEFINE
+                </span>
+                <span 
+                  className="block text-transparent bg-clip-text"
+                  style={{
+                    backgroundImage: 'linear-gradient(105deg, #D4AA60 0%, #F4DEA9 48%, #C99D51 100%)'
+                  }}
+                >
+                  YOUR RADIANCE
+                </span>
+              </h1>
+            </motion.div>
+
+            {/* Step 3: Refined Editorial Description */}
+            <motion.p
+              variants={itemFadeUp}
+              className="text-[#B8AEA8] text-[15px] sm:text-[17px] lg:text-[18px] font-normal leading-relaxed max-w-[570px] font-sans"
+            >
+              Experience bespoke bridal artistry, beautiful hair transformations, and revitalizing skin therapies — at our private studio or in the comfort of your home.
+            </motion.p>
+
+            {/* Step 4: Call-To-Action Buttons */}
+            <motion.div
+              variants={itemFadeUp}
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 pt-1"
+            >
+              {/* Primary CTA */}
+              <Link to="/booking" className="w-full sm:w-auto">
+                <button
+                  type="button"
+                  className="w-full sm:w-auto px-8 py-4 rounded-[3px] bg-[#D9B46A] hover:bg-[#B88A44] text-[#100C0A] font-sans font-bold text-xs uppercase tracking-[0.2em] shadow-[0_4px_20px_rgba(217,180,106,0.25)] hover:shadow-[0_6px_25px_rgba(217,180,106,0.4)] transition-all duration-300 flex items-center justify-center gap-2.5 group active:scale-[0.98]"
+                >
+                  <Calendar className="w-3.5 h-3.5 text-[#100C0A]" />
+                  <span>BOOK APPOINTMENT</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
+              </Link>
+
+              {/* Secondary CTA */}
+              <Link to="/services" className="w-full sm:w-auto">
+                <button
+                  type="button"
+                  className="w-full sm:w-auto px-7 py-4 rounded-[3px] bg-[#1A120E]/70 hover:bg-[#2B1D14] border border-[rgba(217,180,106,0.35)] hover:border-[#D9B46A] text-[#D9B46A] font-sans font-semibold text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center gap-2 group active:scale-[0.98]"
+                >
+                  <span>EXPLORE 11 SERVICES</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
+              </Link>
+            </motion.div>
+
+            {/* Step 5: Mobile Hero Visual (Only displayed on screens < lg) */}
+            <div className="lg:hidden py-6 sm:py-8">
+              <HeroVisual />
             </div>
 
-            {/* Main Title in Montserrat Luxury Styling */}
-            <h1 className="font-sans text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold tracking-tight leading-[1.02] uppercase text-ivory">
-              Redefine <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-[#FFF0C8] to-gold">
-                Your Radiance
-              </span>
-            </h1>
-
-            {/* Subtitle Statement */}
-            <p className="text-sm sm:text-base md:text-lg text-ivory/80 font-light leading-relaxed max-w-xl font-sans tracking-wide">
-              Bespoke bridal artistry, hair transformations, and revitalizing skin therapies in a world of quiet luxury — hosted at our private studio or in the comfort of your residence across Lahore.
-            </p>
-
-            {/* Action CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
-              <Link to="/booking">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="w-full sm:w-auto shadow-goldGlow hover:scale-[1.02] active:scale-[0.98]"
-                  icon={Calendar}
-                >
-                  Book Appointment
-                </Button>
-              </Link>
-              <Link to="/services">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto border-gold/50 text-gold-light hover:bg-gold hover:text-espresso backdrop-blur-sm"
-                  icon={ArrowRight}
-                  iconPosition="right"
-                >
-                  Explore 11 Services
-                </Button>
-              </Link>
-            </div>
-
-            {/* Quick Assurances Badges */}
-            <div className="flex flex-wrap items-center gap-4 text-[11px] text-ivory/70 pt-1 font-sans">
+            {/* Step 6: Trust Features (Subtle minimal row) */}
+            <motion.div
+              variants={itemFadeUp}
+              className="flex flex-wrap items-center gap-3 sm:gap-5 text-xs text-[#B8AEA8] pt-2 font-sans"
+            >
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#D9B46A]" />
                 <span>Transparent PKR Pricing</span>
               </div>
-              <span className="text-gold/40">•</span>
+              <span className="text-[rgba(217,180,106,0.4)] hidden sm:inline">•</span>
               <div className="flex items-center gap-1.5">
-                <Home className="w-3.5 h-3.5 text-gold" />
+                <Home className="w-3.5 h-3.5 text-[#D9B46A]" />
                 <span>At-Home VIP Service (PKR 500)</span>
               </div>
-              <span className="text-gold/40">•</span>
+              <span className="text-[rgba(217,180,106,0.4)] hidden sm:inline">•</span>
               <div className="flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-gold" />
-                <span>Hospital-Grade Sterilization</span>
+                <ShieldCheck className="w-3.5 h-3.5 text-[#D9B46A]" />
+                <span>Professional Hygiene Standards</span>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Metrics & Social Proof Ribbon */}
-            <div className="pt-6 sm:pt-7 border-t border-gold/20 grid grid-cols-3 gap-4 sm:gap-8 max-w-lg">
+            {/* Step 7: Hero Statistics (Below Thin Gold Divider) */}
+            <motion.div
+              variants={itemFadeUp}
+              className="pt-6 sm:pt-7 border-t border-[rgba(217,180,106,0.25)] grid grid-cols-3 gap-3 sm:gap-6 max-w-lg"
+            >
+              {/* Stat 1 */}
               <div>
-                <div className="font-sans text-2xl sm:text-3xl font-extrabold text-gold leading-none">
+                <div className="font-sans font-extrabold text-2xl sm:text-3xl text-[#D9B46A] leading-none">
                   500+
                 </div>
-                <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-ivory/60 mt-1 font-sans font-medium">
+                <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-[#B8AEA8] font-medium mt-1.5">
                   Happy Clients
                 </div>
               </div>
-              <div>
-                <div className="font-sans text-2xl sm:text-3xl font-extrabold text-gold flex items-center gap-1 leading-none">
+
+              {/* Stat 2 with subtle separator */}
+              <div className="border-l border-[rgba(217,180,106,0.2)] pl-3 sm:pl-6">
+                <div className="font-sans font-extrabold text-2xl sm:text-3xl text-[#D9B46A] leading-none flex items-center gap-1">
                   <span>4.9</span>
-                  <Star className="w-4 h-4 fill-gold text-gold" />
+                  <Star className="w-4 h-4 fill-[#D9B46A] text-[#D9B46A]" />
                 </div>
-                <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-ivory/60 mt-1 font-sans font-medium">
+                <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-[#B8AEA8] font-medium mt-1.5">
                   Client Rating
                 </div>
               </div>
-              <div>
-                <div className="font-sans text-2xl sm:text-3xl font-extrabold text-gold leading-none">
+
+              {/* Stat 3 with subtle separator */}
+              <div className="border-l border-[rgba(217,180,106,0.2)] pl-3 sm:pl-6">
+                <div className="font-sans font-extrabold text-2xl sm:text-3xl text-[#D9B46A] leading-none">
                   11+
                 </div>
-                <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-ivory/60 mt-1 font-sans font-medium">
+                <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-[#B8AEA8] font-medium mt-1.5">
                   Signature Services
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* Right Visual Composition: Multi-Layered Editorial Showcase */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
-            className="lg:col-span-5 relative"
-          >
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              
-              {/* Outer Decorative Glowing Ring */}
-              <div className="absolute -inset-2 rounded-t-[140px] rounded-b-2xl bg-gradient-to-b from-gold/30 via-transparent to-gold/10 opacity-70 blur-sm pointer-events-none" />
-
-              {/* Main Editorial Image Frame */}
-              <div className="relative aspect-[4/5] rounded-t-[130px] rounded-b-xl overflow-hidden border-2 border-gold/50 shadow-2xl bg-espresso p-1.5">
-                <div className="w-full h-full rounded-t-[125px] rounded-b-lg overflow-hidden relative">
-                  <img
-                    src="/images/hero/hero-editorial.jpg"
-                    alt="SM Home Beauty Editorial Artistry"
-                    className="w-full h-full object-cover object-center filter saturate-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-espresso-900/80 via-transparent to-transparent" />
-
-                  {/* Subtle Top Crown Monogram */}
-                  <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-espresso/80 border border-gold/40 px-3 py-1 rounded-full backdrop-blur-md text-[9px] uppercase font-sans tracking-[0.25em] text-gold">
-                    Haute Beauty Studio
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Card 1: Authentic Bridal Glam Preview */}
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.7 }}
-                className="absolute -top-5 -left-4 sm:-left-8 bg-chocolate/95 border border-gold/40 p-3 sm:p-3.5 rounded-sm shadow-2xl backdrop-blur-md max-w-[210px] sm:max-w-[230px] z-30"
-              >
-                <div className="flex items-center gap-3">
-                  <img
-                    src="/images/gallery/gal-bridal-2.jpg"
-                    alt="Bridal Makeup"
-                    className="w-12 h-12 rounded-sm object-cover border border-gold/40 flex-shrink-0"
-                  />
-                  <div>
-                    <span className="text-[9px] uppercase font-sans tracking-[0.2em] text-gold block font-semibold">
-                      Haute Bridal
-                    </span>
-                    <span className="text-xs font-bold text-ivory block font-sans">
-                      Luminous Velvet Glam
-                    </span>
-                    <span className="text-[10px] text-gold-light font-sans font-medium">
-                      PKR 25,000 · 180 min
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Card 2: At-Home VIP Concierge Badge */}
-              <motion.div
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.7 }}
-                className="absolute -bottom-6 -right-2 sm:-right-6 bg-chocolate/95 border border-gold/40 p-4 rounded-sm shadow-2xl backdrop-blur-md max-w-[240px] sm:max-w-[260px] z-30"
-              >
-                <div className="flex items-start gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-gold/20 border border-gold/50 flex items-center justify-center text-gold flex-shrink-0 mt-0.5">
-                    <Home className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] uppercase font-sans tracking-[0.2em] text-gold font-bold">
-                      At-Home Concierge
-                    </div>
-                    <div className="text-xs font-bold text-ivory font-sans mt-0.5">
-                      Salon Care at Your Residence
-                    </div>
-                    <div className="text-[10px] text-ivory/70 font-sans mt-1">
-                      Fixed PKR 500 logistics fee across Lahore
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Live Artist Availability Badge */}
-              <div className="absolute bottom-8 left-4 z-30 bg-espresso/90 border border-gold/40 px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-2 text-[10px] text-ivory font-sans shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Today's Time Slots Open (10 AM – 7 PM)</span>
-              </div>
-            </div>
-          </motion.div>
+          {/* ============================================================== */}
+          {/* RIGHT EDITORIAL COMPOSITION (~48%, Desktop only)              */}
+          {/* ============================================================== */}
+          <div className="hidden lg:block lg:col-span-5">
+            <HeroVisual />
+          </div>
 
         </div>
       </div>
