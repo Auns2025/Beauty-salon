@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-ivory: #FBF6F0;
+    --bg-beige: #F3E8DC;
+    --tx-espresso: #110D0B;
+    --tx-muted: #7A6A5E;
+    --gold-primary: #D9B46A;
+    --gold-champagne: #B88A44;
+    --gold-antique: #8F6A2C;
+    --rose-accent: #B5465A;
+  }
+
+  html, body {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    background-color: var(--bg-ivory);
+    color: var(--tx-espresso);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  body {
+    overflow-x: hidden;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #D9B46A;
+    color: #110D0B;
+  }
+
+  /* Custom subtle luxury scrollbars */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #110D0B;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #8F6A2C;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D9B46A;
+  }
+}
+
+/* Custom marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Luxury card and image transitions */
+.luxury-image-zoom {
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.luxury-image-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* Keyframes for gentle fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}

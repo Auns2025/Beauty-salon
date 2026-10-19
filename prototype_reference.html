@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SM Home Beauty – Luxury Salon &amp; Booking</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf6f0;--bg2:#f3e8dc;--card:#fff;--tx:#2a211c;--mu:#7a6a5e;--gold:#b88a44;--gold2:#8f6a2c;--rose:#b5465a;--line:rgba(184,138,68,.35);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#110d0b;--bg2:#1a1411;--card:#221b17;--tx:#f3e9dc;--mu:#b6a595;--gold:#d4a95a;--gold2:#e9c887;--line:rgba(212,169,90,.3)}}
+:root[data-theme="dark"]{--bg:#110d0b;--bg2:#1a1411;--card:#221b17;--tx:#f3e9dc;--mu:#b6a595;--gold:#d4a95a;--gold2:#e9c887;--line:rgba(212,169,90,.3)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font:300 15px/1.7 Montserrat,Arial,sans-serif;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;line-height:1.15}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:calc(12px + env(safe-area-inset-top,0px)) 5% 12px;background:var(--bg);border-bottom:1px solid var(--line)}
+.logo{font-size:25px;color:var(--gold);cursor:pointer;white-space:nowrap}
+.links{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--tx);cursor:pointer;border-bottom:1px solid transparent;transition:.3s}
+.links a:hover,.links a.on{color:var(--gold);border-color:var(--gold)}
+.page{display:none;padding-top:70px;min-height:100vh}.page.on{display:block;animation:fade .6s}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.btn{display:inline-block;padding:13px 30px;border:1px solid var(--gold);color:var(--gold2);background:transparent;font:500 11px Montserrat,sans-serif;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:.3s}
+.btn:hover,.btn.f{background:var(--gold);color:#fff}.btn.f:hover{background:transparent;color:var(--gold2)}.btn:disabled{opacity:.4;cursor:not-allowed}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;align-items:center;padding:50px 7%;min-height:90vh;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,var(--bg2),var(--bg))}
+.orb{position:absolute;border-radius:50%;background:radial-gradient(circle,var(--gold),transparent 70%);opacity:.2;animation:fl 9s ease-in-out infinite;pointer-events:none}
+.o1{width:340px;height:340px;top:-80px;left:-80px}.o2{width:280px;height:280px;bottom:-50px;right:30%;animation-delay:-4s}
+@keyframes fl{50%{transform:translate(30px,40px) scale(1.12)}}
+.eb{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.hero h1{font-size:clamp(42px,7vw,86px)}.hero h1 em{color:var(--gold);font-style:italic}
+.hero p{color:var(--mu);max-width:480px;margin:20px 0 30px}.hero .btn{margin-right:10px;margin-bottom:10px}
+.hv{position:relative;height:460px}.hv .a{position:absolute;border:1px solid var(--gold);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.hv .a1{width:62%;height:78%;right:0;top:0;animation:fl 8s ease-in-out infinite}.hv .a2{width:48%;height:52%;left:0;bottom:0;animation:fl 10s ease-in-out infinite reverse}
+.a svg,.thumb svg{width:100%;height:100%;display:block}
+.arch{width:min(340px,80%);height:100%;margin:auto;border:1px solid var(--gold);border-radius:999px 999px 0 0;overflow:hidden;background:linear-gradient(160deg,#17110e,#3d2c1b);box-shadow:0 30px 60px rgba(0,0,0,.35);animation:fl 8s ease-in-out infinite;position:relative}.arch:after{content:"";position:absolute;inset:10px;border:1px solid rgba(217,180,106,.5);border-radius:999px 999px 0 0;pointer-events:none}.arch svg{width:100%;height:100%;display:block}
+.hero{background:radial-gradient(circle at 75% 30%,#3d2c1b 0,#0e0907 62%);color:#f3e9dc;padding:100px 7% 150px;min-height:100vh}
+.hero h1{font-size:clamp(48px,8vw,104px);line-height:1}
+.hero h1 em{background:linear-gradient(90deg,#d9b46a,#fff3d0,#d9b46a);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 4s linear infinite,up .9s forwards}
+@keyframes sh{to{background-position:200% 0}}
+.w{display:inline-block;opacity:0;transform:translateY(40px);animation:up .9s forwards;animation-delay:var(--d)}
+@keyframes up{to{opacity:1;transform:none}}
+.hero p{color:#cdbfae}.hero .eb{color:#d9b46a}
+.hero .btn:not(.f){border-color:#d9b46a;color:#e9c887}.hero .btn:not(.f):hover{background:#d9b46a;color:#17110e}
+.hero .btn.f{background:#d9b46a;color:#17110e;border-color:#d9b46a}.hero .btn.f:hover{background:transparent;color:#e9c887}
+.hc{position:relative;z-index:2}.st{display:flex;gap:34px;margin-top:34px}.st b{display:block;font:700 34px "Cormorant Garamond",serif;color:#d9b46a;line-height:1}.st small{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#b6a595}
+#dust{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hv{height:520px;position:relative;z-index:2;transform:translate(calc(var(--mx,0)*14px),calc(var(--my,0)*14px));transition:transform .25s}
+.arch{animation:none;width:min(300px,70%);margin:auto}
+.bd{position:absolute;width:84px;height:84px;border-radius:50%;overflow:hidden;border:1px solid #d9b46a;box-shadow:0 10px 30px rgba(0,0,0,.5);animation:fl 7s ease-in-out infinite}
+.b1{top:6%;left:4%}.b2{top:40%;right:0;animation-delay:-2s}.b3{bottom:6%;left:10%;animation-delay:-4s;width:96px;height:96px}.b4{top:2%;right:10%;animation-delay:-3s;width:66px;height:66px}
+.bd svg{width:100%;height:100%;display:block}
+.qb{position:absolute;left:7%;right:7%;bottom:30px;z-index:3;display:flex;gap:10px;flex-wrap:wrap;padding:14px;background:rgba(255,255,255,.07);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(217,180,106,.45)}
+.qb select,.qb input{flex:1;min-width:150px;background:rgba(0,0,0,.4);color:#f3e9dc;border-color:rgba(217,180,106,.4)}.qb .btn{text-align:center}
+.mq{overflow:hidden;background:#d9b46a;color:#17110e;padding:12px 0;white-space:nowrap}.mt{display:inline-block;animation:mq 30s linear infinite;font:italic 600 26px "Cormorant Garamond",serif}.mt span{margin:0 24px}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(max-width:700px){.qb{position:static;margin-top:10px;grid-column:1/-1}.hero{padding:90px 6% 40px}.hv{height:400px}.st{gap:20px}}
+section{padding:80px 7%}.alt{background:var(--bg2)}
+.ttl{text-align:center;margin-bottom:44px}.ttl h2{font-size:clamp(30px,5vw,50px)}.ttl p{color:var(--mu)}.ttl span{display:block;width:60px;height:1px;background:var(--gold);margin:14px auto 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.cat{position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;border:1px solid var(--line)}
+.cat svg{width:100%;height:100%;transition:.6s}.cat:hover svg{transform:scale(1.08)}
+.cat div{position:absolute;left:0;right:0;bottom:0;padding:50px 18px 18px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff}.cat h3{font-size:26px}.cat small{letter-spacing:2px;text-transform:uppercase;font-size:10px}
+.card{background:var(--card);padding:30px 24px;border:1px solid var(--line);text-align:center;transition:.4s}.card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(0,0,0,.14)}
+.card .ic{font-size:30px;color:var(--gold)}.card h3{font-size:24px;margin:6px 0}.card p{color:var(--mu);font-size:13px}
+.q{font:italic 20px/1.5 "Cormorant Garamond",serif}.q small{display:block;font:400 11px Montserrat,sans-serif;letter-spacing:3px;color:var(--gold);margin-top:12px;text-transform:uppercase}
+.cta{text-align:center;padding:90px 7%;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#fff}.cta h2{font-size:clamp(32px,5vw,52px);margin-bottom:22px}.cta .btn{border-color:#fff;color:#fff}.cta .btn:hover{background:#fff;color:var(--gold2)}
+.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.tab{padding:9px 20px;border:1px solid var(--line);font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;background:var(--card);color:var(--tx);font-family:inherit}.tab.on{background:var(--gold);color:#fff;border-color:var(--gold)}
+.svc{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);padding:12px;margin-bottom:14px;transition:.3s}.svc.on{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.thumb{width:84px;height:84px;flex:none;overflow:hidden}.svc .i{flex:1;min-width:0}.svc h3{font-size:22px}.svc p{font-size:12px;color:var(--mu);line-height:1.5}.svc .pr{font-size:12px;color:var(--gold2);margin-top:4px;letter-spacing:1px}
+.svc .btn{padding:10px 16px;font-size:10px;white-space:nowrap}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--gold2);color:#fff;display:none;justify-content:space-between;align-items:center;gap:10px;padding:12px 5% calc(12px + env(safe-area-inset-bottom,0px));font-size:13px}.bar.on{display:flex}.bar .btn{border-color:#fff;color:#fff;padding:10px 20px}.bar .btn:hover{background:#fff;color:var(--gold2)}
+.bk{display:grid;grid-template-columns:minmax(0,2fr) minmax(260px,1fr);gap:30px;align-items:start}@media(max-width:850px){.bk{grid-template-columns:1fr}}
+.steps{display:flex;gap:6px;margin-bottom:26px}.steps div{flex:1;text-align:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding-bottom:8px;border-bottom:2px solid var(--line);color:var(--mu)}.steps .on{border-color:var(--gold);color:var(--gold)}
+.step{display:none}.step.on{display:block;animation:fade .5s}
+.box{background:var(--card);border:1px solid var(--line);padding:22px}.box h3{font-size:24px;margin-bottom:12px}
+.row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:13px}.row b{color:var(--gold2);font-weight:500}.tot{font:700 26px "Cormorant Garamond",serif;color:var(--gold)}
+label{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mu);margin:14px 0 6px}
+input,select,textarea{width:100%;padding:12px;background:var(--bg);border:1px solid var(--line);color:var(--tx);font:300 15px Montserrat,sans-serif}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+.opt{display:flex;gap:10px;flex-wrap:wrap}.chip{padding:10px 16px;border:1px solid var(--line);cursor:pointer;font-size:13px;background:var(--bg);color:var(--tx);font-family:inherit}.chip.on{background:var(--gold);color:#fff;border-color:var(--gold)}.chip.x{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.nv{display:flex;justify-content:space-between;margin-top:24px;gap:10px}.err{color:var(--rose);font-size:13px;margin-top:10px;min-height:20px}
+.tk{border:2px dashed var(--gold);padding:26px;text-align:center;background:var(--card)}.tk h2{color:var(--gold);font-size:34px}.tk .id{letter-spacing:5px;font-size:22px;margin:8px 0}
+.gal{columns:3 220px;column-gap:14px}.gal .g{break-inside:avoid;margin-bottom:14px;overflow:hidden;cursor:pointer;position:relative;border:1px solid var(--line)}.gal svg{width:100%;display:block;transition:.6s}.gal .g:hover svg{transform:scale(1.07)}
+.gal .g span{position:absolute;left:12px;bottom:10px;color:#fff;font:italic 20px "Cormorant Garamond",serif;text-shadow:0 1px 6px #000}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;display:none;align-items:center;justify-content:center;padding:20px}.lb.on{display:flex}.lb div{width:min(420px,90vw);border:2px solid var(--gold)}.lb svg{width:100%;display:block}
+.team .m{text-align:center}.team .m .a{aspect-ratio:4/5;overflow:hidden;border:1px solid var(--gold);margin-bottom:12px}.team h3{font-size:24px}.team small{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:10px}
+details{background:var(--card);border:1px solid var(--line);padding:16px 20px;margin-bottom:10px}summary{cursor:pointer;font-weight:500}details p{color:var(--mu);margin-top:8px}
+.my{margin-top:30px}.my .row{align-items:center}.my button{background:none;border:0;color:var(--rose);cursor:pointer;font-size:12px}
+footer{text-align:center;padding:34px 5% 90px;border-top:1px solid var(--line);color:var(--mu);font-size:12px}
+.rv{opacity:0;transform:translateY(30px);transition:1s}.rv.in{opacity:1;transform:none}
+@media(max-width:700px){.links{gap:12px}.links a{font-size:9px;letter-spacing:1px}.logo{font-size:18px}section{padding:56px 6%}.hv{height:340px}}
+</style></head><body>
+<nav><div class="logo" data-go="home">SM Home Beauty</div><div class="links"><a data-go="home">Home</a><a data-go="services">Services</a><a data-go="book">Book</a><a data-go="gallery">Gallery</a><a data-go="about">About</a><a data-go="contact">Contact</a></div></nav>
+
+<div class="page" id="home">
+<div class="hero" id="hero"><canvas id="dust"></canvas><div class="orb o1"></div><div class="orb o2"></div>
+<div class="hc"><div class="eb">✦ Luxury Salon &amp; Beauty Studio</div>
+<h1><span class="w" style="--d:.1s">Redefine</span><br><span class="w" style="--d:.35s">Your</span> <em class="w" style="--d:.6s">Radiance</em></h1>
+<p>Hair, skin, bridal and nail artistry in a world of quiet luxury – at our studio or in the comfort of your home.</p>
+<div><span class="btn f" data-go="book">Book Appointment</span><span class="btn" data-go="services">Explore Services</span></div>
+<div class="st"><div><b>500+</b><small>Happy Clients</small></div><div><b>4.9★</b><small>Client Rating</small></div><div><b>11+</b><small>Services</small></div></div></div>
+<div class="hv"><div class="arch"><svg viewBox="0 0 300 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#d9b46a"><g><animateTransform attributeName="transform" type="rotate" from="0 150 200" to="360 150 200" dur="50s" repeatCount="indefinite"/><circle cx="150" cy="200" r="104" stroke-width="1.2" stroke-dasharray="2 9"/></g><circle cx="150" cy="200" r="84" stroke-width=".6" opacity=".6"/><path d="M150 70l4 12 12 4-12 4-4 12-4-12-12-4 12-4z" fill="#d9b46a" stroke="none"/></g><text x="150" y="228" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-style="italic" font-size="96" fill="#d9b46a">SM</text><text x="150" y="272" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-size="11" letter-spacing="7" fill="#f3e9dc">HOME BEAUTY</text><text x="150" y="372" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-size="8" letter-spacing="5" fill="#d9b46a" opacity=".85">LUXURY SALON &amp; STUDIO</text></svg></div><div class="bd b1" data-art="5"></div><div class="bd b2" data-art="3"></div><div class="bd b3" data-art="6"></div><div class="bd b4" data-art="0"></div></div>
+<div class="qb"><select id="qs"></select><input type="date" id="qd"><span class="btn f" id="qg">Check Availability</span></div></div>
+<div class="mq"><div class="mt"><span>Hair</span>✦<span>Skin</span>✦<span>Makeup</span>✦<span>Bridal</span>✦<span>Nails</span>✦<span>Waxing</span>✦<span>Hair</span>✦<span>Skin</span>✦<span>Makeup</span>✦<span>Bridal</span>✦<span>Nails</span>✦<span>Waxing</span>✦<span>Hair</span>✦<span>Skin</span>✦<span>Makeup</span>✦<span>Bridal</span>✦<span>Nails</span>✦<span>Waxing</span>✦<span>Hair</span>✦<span>Skin</span>✦<span>Makeup</span>✦<span>Bridal</span>✦<span>Nails</span>✦<span>Waxing</span>✦</div></div>
+<section><div class="ttl rv"><h2>Treatments We Love</h2><p>Choose a category to explore</p><span></span></div><div class="grid" id="cats"></div></section>
+<section class="alt"><div class="ttl rv"><h2>Why SM Home Beauty</h2><span></span></div><div class="grid">
+<div class="card rv"><div class="ic">✦</div><h3>Premium Products</h3><p>Trusted professional brands, gentle on skin and hair.</p></div>
+<div class="card rv"><div class="ic">❀</div><h3>Hygiene First</h3><p>Sanitised tools and a fresh setup for every client.</p></div>
+<div class="card rv"><div class="ic">⌂</div><h3>Home Service</h3><p>Prefer comfort? Our team can come to you.</p></div>
+<div class="card rv"><div class="ic">◷</div><h3>Easy Booking</h3><p>Pick services, date and time – confirmed on WhatsApp.</p></div></div></section>
+<section><div class="ttl rv"><h2>Happy Clients</h2><span></span></div><div class="grid">
+<div class="card rv q">“Bridal makeup was flawless and lasted all night. Highly recommend!”<small>Ayesha</small></div>
+<div class="card rv q">“Calm, clean and elegant. Best facial I have had.”<small>Fatima</small></div>
+<div class="card rv q">“Booking online was so easy, and the hair colour is perfect.”<small>Zainab</small></div></div></section>
+<div class="cta"><h2>Ready for Your Glow-Up?</h2><span class="btn" data-go="book">Reserve Your Visit</span></div></div>
+
+<div class="page" id="services"><section><div class="ttl"><h2>Services &amp; Prices</h2><p>Tap “Add” on anything you like, then continue to booking</p><span></span></div><div class="tabs" id="tabs1"></div><div id="list1" style="max-width:820px;margin:auto"></div></section></div>
+
+<div class="page" id="book"><section><div class="ttl"><h2>Book Your Appointment</h2><span></span></div>
+<div class="bk"><div><div class="steps" id="steps"><div>1 Services</div><div>2 Date &amp; Time</div><div>3 Details</div><div>4 Done</div></div>
+<div class="step" id="s1"><div class="tabs" id="tabs2"></div><div id="list2"></div><div class="err" id="e1"></div><div class="nv"><span></span><button class="btn f" id="n1">Next</button></div></div>
+<div class="step" id="s2"><div class="box"><label style="margin-top:0">Where?</label><div class="opt" id="where"></div><label>Stylist</label><div class="opt" id="sty"></div><label>Date</label><input type="date" id="date"><label>Time</label><div class="opt" id="slots"><span style="color:var(--mu)">Pick a date first</span></div></div><div class="err" id="e2"></div><div class="nv"><button class="btn" data-b="1">Back</button><button class="btn f" id="n2">Next</button></div></div>
+<div class="step" id="s3"><div class="box"><label style="margin-top:0">Full Name</label><input id="nm" autocomplete="name"><label>WhatsApp / Phone</label><input id="ph" inputmode="tel" autocomplete="tel"><label>Address (for home service)</label><input id="ad"><label>Notes (optional)</label><textarea id="nt" rows="3"></textarea></div><div class="err" id="e3"></div><div class="nv"><button class="btn" data-b="2">Back</button><button class="btn f" id="n3">Confirm Booking</button></div></div>
+<div class="step" id="s4"><div class="tk" id="tk"></div></div></div>
+<div class="box" style="position:sticky;top:90px"><h3>Your Booking</h3><div id="sum"></div></div></div>
+<div class="my box" id="my" style="display:none"><h3>My Bookings</h3><div id="mylist"></div></div></section></div>
+
+<div class="page" id="gallery"><section><div class="ttl"><h2>Gallery</h2><p>Tap any look to view</p><span></span></div><div class="gal" id="gal"></div><p style="text-align:center;margin-top:26px;color:var(--mu)">Follow <b style="color:var(--gold)">@sm.homebeauty</b> on Instagram for daily work</p></section></div>
+
+<div class="page" id="about"><section><div class="ttl"><h2>About Us</h2><span></span></div><p style="max-width:720px;margin:auto;text-align:center;color:var(--mu)">SM Home Beauty is a luxury beauty destination dedicated to making every client look and feel their best. From everyday grooming to bridal transformations, we pair skilled hands and quality products with warm hospitality – at our studio or in the comfort of your home.</p></section>
+<section class="alt"><div class="ttl"><h2>Meet The Team</h2><span></span></div><div class="grid team" id="team"></div></section>
+<section><div class="ttl"><h2>FAQ</h2><span></span></div><div style="max-width:720px;margin:auto">
+<details><summary>How do I book?</summary><p>Choose services on the Book page, pick a date and time, enter your details, and confirm. Your request goes to us on WhatsApp.</p></details>
+<details><summary>Do you offer home service?</summary><p>Yes. Select “At Home” while booking and add your address. A small visit fee applies.</p></details>
+<details><summary>Can I cancel or reschedule?</summary><p>Please message us on WhatsApp at least 24 hours before your slot.</p></details>
+<details><summary>Do you do bridal packages?</summary><p>Yes – add Bridal Makeup and mention your date in the notes, and we will confirm a trial.</p></details></div></section></div>
+
+<div class="page" id="contact"><section><div class="ttl"><h2>Contact</h2><span></span></div><div class="grid" style="max-width:900px;margin:auto">
+<div class="card"><div class="ic">☎</div><h3>WhatsApp</h3><p>+92 3XX XXXXXXX</p></div>
+<div class="card"><div class="ic">◉</div><h3>Instagram</h3><p>@sm.homebeauty</p></div>
+<div class="card"><div class="ic">⌂</div><h3>Address</h3><p>Your salon address here</p></div>
+<div class="card"><div class="ic">◷</div><h3>Hours</h3><p>Daily 10:00 AM – 7:00 PM</p></div></div>
+<div style="text-align:center;margin-top:36px"><span class="btn f" data-go="book">Book Online</span></div></section></div>
+
+<div class="bar" id="bar"><span id="bt"></span><span class="btn" data-go="book">Continue</span></div>
+<div class="lb" id="lb"><div id="lbi"></div></div>
+<footer>© 2026 SM Home Beauty · @sm.homebeauty</footer>
+
+<script>
+var WA="923000000000"; // apna WhatsApp number (country code ke sath)
+var HOMEFEE=500;
+var CATS=["Hair","Skin","Makeup","Nails","Waxing"];
+// id,cat,name,desc,price(PKR),minutes,art
+var S=[
+["h1","Hair","Haircut & Styling","Trim, layers and blow-dry finish",1500,60,0],
+["h2","Hair","Hair Colour","Global colour, highlights or balayage",6000,150,1],
+["h3","Hair","Keratin / Hair Spa","Deep repair for smooth, shiny hair",5000,90,2],
+["s1","Skin","Glow Facial","Deep cleanse, massage and mask",3000,60,3],
+["s2","Skin","Whitening Facial","Brightening treatment for even tone",4500,75,4],
+["m1","Makeup","Party Makeup","Soft glam or full glam with lashes",5000,75,5],
+["m2","Makeup","Bridal Makeup","HD bridal look with trial consult",25000,180,6],
+["n1","Nails","Manicure","Shape, cuticle care and polish",1500,45,7],
+["n2","Nails","Pedicure","Relaxing soak, scrub and polish",2000,60,7],
+["w1","Waxing","Full Arms / Legs Wax","Gentle, hygienic waxing",1800,45,1],
+["w2","Waxing","Threading","Eyebrows and face",400,20,3]];
+var STY=["Any Available","Sana","Hira","Mehwish"];
+var HRS=[10,11,12,13,14,15,16,17,18];
+var sel={},cat="Hair",bk={where:"Salon",sty:"Any Available",date:"",time:""},step=1;
+function $(i){return document.getElementById(i)}
+function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+function fmt(n){return "PKR "+n.toLocaleString("en-US")}
+function fh(h){return (h>12?h-12:h)+":00 "+(h>=12?"PM":"AM")}
+// ---------- luxury line-art visuals (inline SVG) ----------
+var ICONS=['<circle cx="-18" cy="30" r="11"/><circle cx="18" cy="30" r="11"/><path d="M-12 21L14 -40M12 21L-14 -40"/>',
+'<path d="M0 -42C-24 -8 -28 6 -28 16a28 28 0 0056 0c0-10-4-24-28-58z"/><path d="M-12 18a12 12 0 0012 12"/>',
+'<path d="M0 -44l9 29 29 9-29 9-9 29-9-29-29-9 29-9z"/><circle r="50" opacity=".4"/>',
+'<ellipse cy="-22" rx="11" ry="20"/><ellipse cy="-22" rx="11" ry="20" transform="rotate(60)"/><ellipse cy="-22" rx="11" ry="20" transform="rotate(120)"/><ellipse cy="-22" rx="11" ry="20" transform="rotate(180)"/><ellipse cy="-22" rx="11" ry="20" transform="rotate(240)"/><ellipse cy="-22" rx="11" ry="20" transform="rotate(300)"/><circle r="7"/>',
+'<path d="M-34 -14L-18 -34H18L34 -14L0 38z"/><path d="M-34 -14H34M-18 -34L-8 -14L0 38L8 -14L18 -34"/>',
+'<rect x="-14" y="0" width="28" height="40" rx="3"/><rect x="-11" y="-14" width="22" height="14"/><path d="M-9 -14V-34L9 -44V-14"/>',
+'<path d="M-38 24L-44 -20L-20 0L0 -34L20 0L44 -20L38 24z"/><path d="M-38 36H38"/><circle cy="-40" r="3"/><circle cx="-44" cy="-24" r="3"/><circle cx="44" cy="-24" r="3"/>',
+'<rect x="-24" y="-4" width="48" height="44" rx="10"/><rect x="-9" y="-40" width="18" height="36" rx="4"/><path d="M-14 12h28"/>'];
+function art(i,w){i=i%8;var dk=i%2==0,id="g"+i+w,c1=dk?"#17110e":"#f8efe0",c2=dk?"#3d2c1b":"#e3c996",st=dk?"#d9b46a":"#8f6a2c";
+return '<svg viewBox="0 0 200 250" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="'+id+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+c1+'"/><stop offset="1" stop-color="'+c2+'"/></linearGradient></defs><rect width="200" height="250" fill="url(#'+id+')"/><path d="M0 190C50 160 90 215 200 170V250H0z" fill="'+st+'" opacity=".09"/><rect x="12" y="12" width="176" height="226" fill="none" stroke="'+st+'" stroke-width=".8" opacity=".75"/><rect x="18" y="18" width="164" height="214" fill="none" stroke="'+st+'" stroke-width=".4" opacity=".5"/><g transform="translate(100 112)" fill="none" stroke="'+st+'" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'+ICONS[i]+'</g><path d="M38 48l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="'+st+'" opacity=".8"/><path d="M160 190l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z" fill="'+st+'" opacity=".7"/><text x="100" y="214" text-anchor="middle" font-size="8" letter-spacing="4" fill="'+st+'" font-family="Montserrat,Arial,sans-serif">SM HOME BEAUTY</text></svg>'}
+function mount(){document.querySelectorAll("[data-art]").forEach(function(e){e.innerHTML=art(+e.dataset.art,"m"+Math.random().toString(36).slice(2,5))})}
+// ---------- services ----------
+function tabs(el,fn){el.innerHTML=CATS.map(function(c){return '<button class="tab'+(c==cat?" on":"")+'" data-c="'+c+'">'+c+'</button>'}).join("");el.onclick=function(e){var c=e.target.dataset.c;if(c){cat=c;fn()}}}
+function list(el){el.innerHTML=S.filter(function(s){return s[1]==cat}).map(function(s){var on=sel[s[0]];
+return '<div class="svc'+(on?" on":"")+'"><div class="thumb">'+art(s[6],"s"+s[0])+'</div><div class="i"><h3>'+s[2]+'</h3><p>'+s[3]+'</p><div class="pr">'+fmt(s[4])+' · '+s[5]+' min</div></div><button class="btn'+(on?" f":"")+'" data-t="'+s[0]+'">'+(on?"Added ✓":"Add")+'</button></div>'}).join("")}
+function drawServices(){tabs($("tabs1"),drawServices);tabs($("tabs2"),drawServices);list($("list1"));list($("list2"));summary()}
+document.addEventListener("click",function(e){var t=e.target.closest("[data-t]");if(t){var k=t.dataset.t;if(sel[k])delete sel[k];else sel[k]=1;drawServices()}});
+function chosen(){return S.filter(function(s){return sel[s[0]]})}
+function totals(){var c=chosen(),p=0,m=0;c.forEach(function(s){p+=s[4];m+=s[5]});if(bk.where=="At Home"&&c.length)p+=HOMEFEE;return{c:c,p:p,m:m}}
+function summary(){var t=totals(),h="";
+if(!t.c.length)h='<p style="color:var(--mu)">No services selected yet.</p>';
+else{t.c.forEach(function(s){h+='<div class="row"><span>'+s[2]+'</span><b>'+fmt(s[4])+'</b></div>'});
+if(bk.where=="At Home")h+='<div class="row"><span>Home visit fee</span><b>'+fmt(HOMEFEE)+'</b></div>';
+h+='<div class="row"><span>Duration</span><b>'+t.m+' min</b></div>';
+if(bk.date)h+='<div class="row"><span>When</span><b>'+bk.date+(bk.time?" · "+fh(+bk.time):"")+'</b></div>';
+h+='<div class="row"><span>Stylist</span><b>'+bk.sty+'</b></div><div class="tot" style="margin-top:10px">'+fmt(t.p)+'</div>'}
+$("sum").innerHTML=h;
+var b=$("bar");$("bt").textContent=t.c.length+" selected · "+fmt(t.p);b.classList.toggle("on",t.c.length>0&&cur!="book")}
+// ---------- booking flow ----------
+function setStep(n){step=n;for(var i=1;i<=4;i++){$("s"+i).classList.toggle("on",i==n);$("steps").children[i-1].classList.toggle("on",i<=n)}window.scrollTo(0,0)}
+function chips(el,arr,key,fn){el.innerHTML=arr.map(function(a){return '<button class="chip'+(bk[key]==a?" on":"")+'" data-v="'+a+'">'+a+'</button>'}).join("");el.onclick=function(e){var v=e.target.dataset.v;if(v){bk[key]=v;fn()}}}
+function drawOpts(){chips($("where"),["Salon","At Home"],"where",drawOpts);chips($("sty"),STY,"sty",drawOpts);drawSlots();summary()}
+function taken(h){var s=bk.date+h+bk.sty,x=0;for(var i=0;i<s.length;i++)x=(x*31+s.charCodeAt(i))%97;return x%5==0}
+function drawSlots(){var el=$("slots");if(!bk.date){el.innerHTML='<span style="color:var(--mu)">Pick a date first</span>';return}
+el.innerHTML=HRS.map(function(h){var t=taken(h);return '<button class="chip'+(t?" x":"")+(bk.time==h?" on":"")+'" data-h="'+h+'"'+(t?" disabled":"")+'>'+fh(h)+'</button>'}).join("");
+el.onclick=function(e){var h=e.target.dataset.h;if(h){bk.time=h;drawSlots();summary()}}}
+$("date").addEventListener("change",function(){bk.date=this.value;bk.time="";drawSlots();summary()});
+$("n1").onclick=function(){if(!chosen().length){$("e1").textContent="Please add at least one service.";return}$("e1").textContent="";setStep(2)};
+$("n2").onclick=function(){if(!bk.date||!bk.time){$("e2").textContent="Please choose a date and an available time.";return}$("e2").textContent="";setStep(3)};
+document.querySelectorAll("[data-b]").forEach(function(b){b.onclick=function(){setStep(+b.dataset.b)}});
+$("n3").onclick=function(){var n=$("nm").value.trim(),p=$("ph").value.trim(),a=$("ad").value.trim();
+if(n.length<2||p.replace(/\D/g,"").length<10){$("e3").textContent="Please enter your name and a valid phone number.";return}
+if(bk.where=="At Home"&&!a){$("e3").textContent="Please enter your address for home service.";return}
+var t=totals(),b={id:"SM"+Math.floor(1000+Math.random()*9000),name:n,phone:p,addr:a,note:$("nt").value.trim(),where:bk.where,sty:bk.sty,date:bk.date,time:fh(+bk.time),svcs:t.c.map(function(s){return s[2]}),total:t.p,mins:t.m};
+var all=load();all.push(b);save(all);ticket(b);setStep(4);sel={};drawServices();showMy()};
+function msg(b){return "Hello SM Home Beauty! New booking "+b.id+"\nName: "+b.name+"\nPhone: "+b.phone+"\nServices: "+b.svcs.join(", ")+"\nWhere: "+b.where+(b.addr?" ("+b.addr+")":"")+"\nStylist: "+b.sty+"\nDate: "+b.date+" at "+b.time+"\nTotal: "+fmt(b.total)+(b.note?"\nNotes: "+b.note:"")}
+function ticket(b){$("tk").innerHTML='<h2>Booking Requested ✦</h2><div class="id">'+b.id+'</div><p>'+esc(b.date)+' · '+esc(b.time)+' · '+esc(b.where)+'</p><p style="margin:8px 0">'+b.svcs.map(esc).join(" · ")+'</p><div class="tot">'+fmt(b.total)+'</div><p style="color:var(--mu);margin:14px 0">Tap below to send this booking on WhatsApp. We will confirm your slot shortly.</p><a class="btn f" target="_blank" rel="noopener" href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg(b))+'">Send on WhatsApp</a><p style="margin-top:16px"><span class="btn" id="again">Book Another</span></p>';
+$("again").onclick=function(){bk.time="";bk.date="";$("date").value="";drawOpts();setStep(1)}}
+function load(){try{return JSON.parse(localStorage.getItem("smhb")||"[]")}catch(e){return[]}}
+function save(a){try{localStorage.setItem("smhb",JSON.stringify(a))}catch(e){}}
+function showMy(){var a=load();$("my").style.display=a.length?"block":"none";
+$("mylist").innerHTML=a.map(function(b){return '<div class="row"><span>'+esc(b.id)+' · '+esc(b.date)+' '+esc(b.time)+'<br><small>'+b.svcs.map(esc).join(", ")+'</small></span><span><b>'+fmt(b.total)+'</b> <button data-x="'+esc(b.id)+'">Cancel</button></span></div>'}).join("")}
+$("mylist").onclick=function(e){var x=e.target.dataset.x;if(x){save(load().filter(function(b){return b.id!=x}));showMy()}};
+// ---------- gallery, team, cats ----------
+var GL=["Bridal Looks","Hair Styling","Glow Facial","Party Makeup","Nail Art","Hair Colour","Soft Glam","Keratin","Mehndi Day","Salon Ambience","Pedicure","Before & After"];
+$("gal").innerHTML=GL.map(function(l,i){return '<div class="g" data-i="'+i+'"><div style="aspect-ratio:4/'+(i%3?5:6)+'">'+art(i,"g"+i)+'</div><span>'+l+'</span></div>'}).join("");
+$("gal").onclick=function(e){var g=e.target.closest(".g");if(g){$("lbi").innerHTML=art(+g.dataset.i,"L");$("lb").classList.add("on")}};
+$("lb").onclick=function(){this.classList.remove("on")};
+$("team").innerHTML=[["Sana","Senior Stylist",0],["Hira","Makeup Artist",5],["Mehwish","Skin & Nails Expert",3]].map(function(m){return '<div class="m rv"><div class="a">'+art(m[2],"t"+m[0])+'</div><h3>'+m[0]+'</h3><small>'+m[1]+'</small></div>'}).join("");
+$("cats").innerHTML=CATS.slice(0,4).map(function(c,i){return '<div class="cat rv" data-cat="'+c+'">'+art([0,3,5,7][i],"c"+i)+'<div><h3>'+c+'</h3><small>Explore →</small></div></div>'}).join("");
+$("cats").onclick=function(e){var c=e.target.closest(".cat");if(c){cat=c.dataset.cat;drawServices();location.hash="services"}};
+// ---------- router ----------
+var cur="home",io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1});
+function go(id){if(!$(id)||!$(id).classList.contains("page"))id="home";cur=id;
+document.querySelectorAll(".page").forEach(function(p){p.classList.toggle("on",p.id===id)});
+document.querySelectorAll(".links a").forEach(function(a){a.classList.toggle("on",a.dataset.go===id)});
+window.scrollTo(0,0);if(id=="home"&&window.rs)rs();
+document.querySelectorAll("#"+id+" .rv").forEach(function(e){e.classList.remove("in");io.observe(e)});summary()}
+document.addEventListener("click",function(e){var a=e.target.closest("[data-go]");if(a)location.hash=a.dataset.go});
+window.addEventListener("hashchange",function(){go(location.hash.slice(1))});
+var d=new Date();$("date").min=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+// ---------- hero extras ----------
+$("qs").innerHTML=S.map(function(x){return '<option value="'+x[0]+'">'+x[2]+' – '+fmt(x[4])+'</option>'}).join("");
+$("qd").min=$("date").min;
+$("qg").onclick=function(){sel[$("qs").value]=1;if($("qd").value){bk.date=$("qd").value;$("date").value=bk.date;bk.time=""}drawServices();drawSlots();setStep(1);location.hash="book"};
+$("hero").addEventListener("mousemove",function(e){var r=this.getBoundingClientRect();this.style.setProperty("--mx",((e.clientX-r.left)/r.width-.5).toFixed(2));this.style.setProperty("--my",((e.clientY-r.top)/r.height-.5).toFixed(2))});
+var cv=$("dust"),cx=cv.getContext("2d"),P=[];function rs(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight}rs();addEventListener("resize",rs);
+for(var k=0;k<70;k++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.4,v:Math.random()*.0007+.0002,a:Math.random()*6});
+function tick(){if(cur=="home"){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.y-=p.v;p.a+=.02;if(p.y<0){p.y=1;p.x=Math.random()}cx.globalAlpha=.3+.5*Math.abs(Math.sin(p.a));cx.fillStyle="#e9c887";cx.beginPath();cx.arc(p.x*cv.width,p.y*cv.height,p.r,0,6.3);cx.fill()})}requestAnimationFrame(tick)}tick();
+mount();drawServices();drawOpts();setStep(1);showMy();go(location.hash.slice(1)||"home");
+</script></body></html>
