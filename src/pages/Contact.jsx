@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BUSINESS_CONFIG } from '../config/business';
-import { createGeneralInquiryLink } from '../utils/whatsapp';
+import { createGeneralInquiryLink, normalizeWhatsAppNumber } from '../utils/whatsapp';
 import SectionHeading from '../components/common/SectionHeading';
 import Button from '../components/common/Button';
 import { MessageCircle, Instagram, MapPin, Clock, Phone, Mail, Send, Check, AlertCircle, Sparkles } from 'lucide-react';
@@ -15,7 +15,7 @@ export default function Contact() {
 
   const handleInquirySubmit = (e) => {
     e.preventDefault();
-    const cleanPhone = BUSINESS_CONFIG.contact.whatsappNumber.replace(/\D/g, '');
+    const cleanPhone = normalizeWhatsAppNumber(BUSINESS_CONFIG.contact.whatsappNumber);
     const textLines = [
       `✦ *CONCIERGE INQUIRY — ${BUSINESS_CONFIG.name}* ✦`,
       `Name: ${inquiryName || 'Not specified'}`,
@@ -39,14 +39,6 @@ export default function Contact() {
           subtitle="Whether planning bridal makeup, organizing home beauty appointments, or inquiring regarding our service menu, we are at your service."
         />
 
-        {/* Verification banner for owner */}
-        <div className="max-w-3xl mx-auto p-4 bg-white border border-gold/30 rounded-sm shadow-sm flex items-start gap-3 text-xs text-mutedText">
-          <AlertCircle className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-          <div>
-            <span className="font-semibold text-espresso">Business Verification Notice: </span>
-            The contact coordinates below are centralized in <code className="text-gold-deep bg-ivory px-1 py-0.5 rounded">src/config/business.js</code>. The studio owner may update the WhatsApp number, address coordinates, and phone numbers directly there prior to live public launch.
-          </div>
-        </div>
 
         {/* 4 Cards from Prototype */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -112,7 +104,7 @@ export default function Contact() {
                 Studio Address
               </h3>
               <p className="text-xs text-mutedText mb-3">
-                Boutique salon appointments & Lahore home visits.
+                Boutique salon appointments & Dubai/Sharjah home visits.
               </p>
               <div className="text-xs text-darkText font-medium leading-relaxed">
                 {BUSINESS_CONFIG.contact.address.display}
@@ -256,13 +248,17 @@ export default function Contact() {
         </div>
 
         {/* Direct Booking CTA */}
-        <div className="text-center pt-6">
-          <Link to="/booking">
-            <Button variant="outline" size="lg">
-              Proceed Directly to Multi-Step Booking →
-            </Button>
-          </Link>
-        </div>
+       <div className="text-center pt-6">
+  <Link to="/booking">
+    <Button 
+      variant="outline" 
+      size="lg"
+      className="!text-black !bg-[#d9b46a] hover:!bg-[#B8863B] hover:!text-black border-[#d9b46a] hover:border-[#B8863B] transition-colors"
+    >
+      Proceed Directly to Multi-Step Booking →
+    </Button>
+  </Link>
+</div>
       </div>
     </div>
   );

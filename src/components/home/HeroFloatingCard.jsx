@@ -37,7 +37,7 @@ export default function HeroFloatingCard({
             Luminous Velvet Glam
           </div>
           <div className="text-[10px] sm:text-[11px] text-[#D9B46A] font-medium tracking-wide mt-0.5">
-            PKR 25,000 · 180 min
+            AED 450 · 180 min
           </div>
         </div>
       </motion.div>
@@ -67,7 +67,7 @@ export default function HeroFloatingCard({
           Salon Care at Your Residence
         </div>
         <div className="text-[10px] sm:text-[11px] text-[#D9B46A] font-medium tracking-wide mt-0.5">
-          PKR 500 Visit Fee
+          Free Home Concierge (Dubai & Sharjah)
         </div>
       </div>
     </motion.div>

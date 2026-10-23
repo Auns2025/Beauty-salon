@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Clock, Check, Plus, Info } from 'lucide-react';
-import { formatPKR, formatDuration } from '../../utils/pricing';
+import { Clock, Check, Plus, Info, Sparkles } from 'lucide-react';
+import { formatAED, formatDuration } from '../../utils/pricing';
 import Button from '../common/Button';
 
 export default function ServiceCard({
@@ -30,10 +30,15 @@ export default function ServiceCard({
         <div className="absolute inset-0 bg-gradient-to-t from-espresso/70 via-espresso/10 to-transparent" />
 
         {/* Top Badges */}
-        <div className="absolute top-3 left-3 flex items-center gap-1.5">
+        <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5">
           <span className="px-2.5 py-1 text-[10px] font-sans uppercase tracking-[0.15em] bg-espresso/90 text-gold border border-gold/30 backdrop-blur-sm">
             {service.category}
           </span>
+          {service.points && (
+            <span className="px-2 py-1 text-[9px] font-sans uppercase tracking-[0.15em] bg-[#2B1D14]/90 text-[#F0D394] border border-[#D9B46A]/40 backdrop-blur-sm">
+              {service.points} Pts
+            </span>
+          )}
           {service.tag && (
             <span className="px-2 py-1 text-[9px] font-sans uppercase tracking-[0.15em] bg-gold/90 text-espresso font-semibold">
               {service.tag}
@@ -53,7 +58,7 @@ export default function ServiceCard({
           <div>
             <div className="text-[10px] font-sans uppercase tracking-wider text-ivory/80">Investment</div>
             <div className="font-sans text-xl sm:text-2xl font-extrabold text-gold-light leading-none">
-              {formatPKR(service.price)}
+              {formatAED(service.price)}
             </div>
           </div>
           <div className="flex items-center gap-1 text-[11px] font-sans bg-espresso/80 px-2 py-1 border border-gold/20 backdrop-blur-sm">
@@ -96,7 +101,7 @@ export default function ServiceCard({
         {/* Action Button */}
         <div className="pt-3 border-t border-beige/60 flex items-center justify-between gap-3">
           <div className="text-[11px] text-mutedText hidden sm:block">
-            {isSelected ? 'Ready in booking tray' : 'Available for Salon & Home'}
+            {isSelected ? 'Ready in booking tray' : 'Available for Salon & Free Home'}
           </div>
           <Button
             variant={isSelected ? 'primary' : 'secondary'}

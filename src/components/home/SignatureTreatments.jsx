@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES } from '../../data/services';
 import { useBooking } from '../../context/BookingContext';
-import { formatPKR, formatDuration } from '../../utils/pricing';
+import { formatAED, formatDuration } from '../../utils/pricing';
 import SectionHeading from '../common/SectionHeading';
 import Button from '../common/Button';
 import { Clock, Check, Plus, Sparkles } from 'lucide-react';
@@ -46,7 +46,7 @@ export default function SignatureTreatments() {
 
                   <div className="absolute bottom-3 left-4 right-4 flex items-baseline justify-between text-ivory">
                     <span className="font-sans text-xl sm:text-2xl font-extrabold text-gold-light">
-                      {formatPKR(service.price)}
+                      {formatAED(service.price)}
                     </span>
                     <span className="text-xs text-ivory/80 flex items-center gap-1 font-sans">
                       <Clock className="w-3.5 h-3.5 text-gold" />
@@ -86,11 +86,16 @@ export default function SignatureTreatments() {
           })}
         </div>
 
+        {/* Updated Button with #d9b46a background and black text */}
         <div className="text-center mt-12">
           <Link to="/services">
-            <Button variant="outline" size="md">
-              View All 11 Services & Full Pricing
-            </Button>
+            <Button 
+  variant="outline" 
+  size="md" 
+  className="!text-black !bg-[#d9b46a] hover:!bg-[#B8863B] hover:!text-black border-[#d9b46a] hover:border-[#B8863B] transition-colors"
+>
+  View All Packages & Full Pricing
+</Button>
           </Link>
         </div>
       </div>

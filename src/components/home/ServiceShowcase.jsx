@@ -7,31 +7,31 @@ export default function ServiceShowcase() {
   const categories = [
     {
       name: "Hair Artistry",
-      query: "Hair",
-      desc: "Balayage, precision cuts, and keratin infusion therapy.",
+      query: "Hair & Styling",
+      desc: "Precision cuts, blowouts, global color, and keratin infusion therapy.",
       image: "/images/services/hair-colour.jpg",
-      startingPrice: "From PKR 1,500"
+      startingPrice: "From AED 35"
     },
     {
       name: "Dermal Skincare",
-      query: "Skin",
-      desc: "Cellular glow facials, whitening therapies, and botanical masks.",
+      query: "Facials & Skin Treatments",
+      desc: "24K Gold facials, avocado glow therapies, and ultrasonic purification.",
       image: "/images/services/glow-facial.jpg",
-      startingPrice: "From PKR 3,000"
+      startingPrice: "From AED 40"
     },
     {
       name: "Bridal & Glam Makeup",
-      query: "Makeup",
-      desc: "Flawless HD makeup, Barat couture looks, and party glam.",
+      query: "Bridal Makeup",
+      desc: "Flawless HD couture looks, trial consultations, and party glam.",
       image: "/images/services/bridal-makeup.jpg",
-      startingPrice: "From PKR 5,000"
+      startingPrice: "From AED 180"
     },
     {
       name: "Nail Architecture",
-      query: "Nails",
-      desc: "Organic botanical manicures, pedicures, and nail polish care.",
+      query: "Manicure & Pedicure",
+      desc: "Acrylic nail extensions, high-shine gel polish, and deluxe spa pedicures.",
       image: "/images/services/manicure.jpg",
-      startingPrice: "From PKR 1,500"
+      startingPrice: "From AED 45"
     }
   ];
 

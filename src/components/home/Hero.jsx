@@ -68,7 +68,7 @@ export default function Hero() {
             <motion.div variants={itemFadeUp} className="flex items-center">
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-[3px] bg-[#2B1D14]/50 border border-[rgba(217,180,106,0.35)] backdrop-blur-sm text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.25em] text-[#D9B46A] uppercase shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D9B46A]" />
-                <span>SM HOME BEAUTY · STUDIO & AT-HOME CONCIERGE</span>
+                <span>S&M HOME BEAUTY SALON · DUBAI & SHARJAH</span>
               </div>
             </motion.div>
 
@@ -120,7 +120,7 @@ export default function Hero() {
                   type="button"
                   className="w-full sm:w-auto px-7 py-4 rounded-[3px] bg-[#1A120E]/70 hover:bg-[#2B1D14] border border-[rgba(217,180,106,0.35)] hover:border-[#D9B46A] text-[#D9B46A] font-sans font-semibold text-xs uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center gap-2 group active:scale-[0.98]"
                 >
-                  <span>EXPLORE 11 SERVICES</span>
+                  <span>EXPLORE 11 PACKAGES & SERVICES</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </Link>
@@ -138,12 +138,12 @@ export default function Hero() {
             >
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#D9B46A]" />
-                <span>Transparent PKR Pricing</span>
+                <span>Transparent AED Pricing</span>
               </div>
               <span className="text-[rgba(217,180,106,0.4)] hidden sm:inline">•</span>
               <div className="flex items-center gap-1.5">
                 <Home className="w-3.5 h-3.5 text-[#D9B46A]" />
-                <span>At-Home VIP Service (PKR 500)</span>
+                <span>Free Home Service (Dubai & Sharjah)</span>
               </div>
               <span className="text-[rgba(217,180,106,0.4)] hidden sm:inline">•</span>
               <div className="flex items-center gap-1.5">

@@ -24,7 +24,7 @@ export default function HeroVisual() {
           {/* Main Authentic Salon Stylist & Client Photograph */}
           <img
             src="/images/hero/hero-stylist-treatment.jpg"
-            alt="Professional Salon Hair Artistry and Styling at SM Home Beauty"
+            alt="Professional Salon Hair Artistry and Styling at S&M Home Beauty Salon"
             className="w-full h-full object-cover object-center filter brightness-[0.96] contrast-[1.04]"
             loading="eager"
           />

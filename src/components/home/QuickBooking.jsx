@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SERVICES } from '../../data/services';
+import { SERVICES, PACKAGES } from '../../data/services';
 import { useBooking } from '../../context/BookingContext';
-import { formatPKR, getMinDateString } from '../../utils/pricing';
+import { formatAED, getMinDateString } from '../../utils/pricing';
 import Button from '../common/Button';
 import { Calendar, Sparkles, ArrowRight, Info } from 'lucide-react';
 
@@ -10,7 +10,7 @@ export default function QuickBooking() {
   const navigate = useNavigate();
   const { initiateQuickBooking } = useBooking();
 
-  const [selectedServiceId, setSelectedServiceId] = useState(SERVICES[0]?.id || '');
+  const [selectedServiceId, setSelectedServiceId] = useState(PACKAGES[0]?.id || SERVICES[0]?.id || '');
   const [selectedDate, setSelectedDate] = useState('');
   const minDate = getMinDateString();
 
@@ -37,21 +37,30 @@ export default function QuickBooking() {
         </div>
 
         <form onSubmit={handleCheckAvailability} className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-4 items-end">
-          {/* Service Picker */}
+          {/* Service/Package Picker */}
           <div className="sm:col-span-5">
             <label className="block text-[10px] uppercase font-sans tracking-[0.18em] text-[#B8AEA8] mb-1.5 font-medium">
-              Select Desired Service
+              Select Package or Service
             </label>
             <select
               value={selectedServiceId}
               onChange={(e) => setSelectedServiceId(e.target.value)}
               className="w-full bg-[#100C0A] border border-[rgba(217,180,106,0.3)] px-3.5 py-3 text-xs text-[#F8F5F0] font-sans focus:outline-none focus:border-[#D9B46A] rounded-[2px]"
             >
-              {SERVICES.map((s) => (
-                <option key={s.id} value={s.id} className="bg-[#100C0A] text-[#F8F5F0]">
-                  {s.name} — {formatPKR(s.price)} ({s.category})
-                </option>
-              ))}
+              <optgroup label="Official Packages (11)" className="bg-[#1A120E] text-[#D9B46A]">
+                {PACKAGES.map((p) => (
+                  <option key={p.id} value={p.id} className="bg-[#100C0A] text-[#F8F5F0]">
+                    {p.name} — {formatAED(p.price)}
+                  </option>
+                ))}
+              </optgroup>
+              <optgroup label="Individual Treatments" className="bg-[#1A120E] text-[#D9B46A]">
+                {SERVICES.map((s) => (
+                  <option key={s.id} value={s.id} className="bg-[#100C0A] text-[#F8F5F0]">
+                    {s.name} — {formatAED(s.price)} ({s.category})
+                  </option>
+                ))}
+              </optgroup>
             </select>
           </div>
 

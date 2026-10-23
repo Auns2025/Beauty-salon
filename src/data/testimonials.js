@@ -10,7 +10,7 @@ export const TESTIMONIALS = [
   },
   {
     id: 2,
-    quote: "Calm, clean and elegant. Best facial I have had in Lahore.",
+    quote: "Calm, clean and elegant. Best facial experience in Dubai.",
     client: "Fatima R.",
     service: "Signature Glow Facial",
     location: "At Home Service",
@@ -35,7 +35,7 @@ export const FAQS = [
   },
   {
     question: "Do you offer beauty services at home?",
-    answer: "Yes, our certified beauty artists travel directly to your residence across Lahore with complete sanitized kits, fresh linens, and professional equipment. A fixed home visit fee of PKR 500 is applied to cover logistic coordination."
+    answer: "Yes, our certified beauty artists travel directly to your residence across Dubai & Sharjah with complete sanitized kits, fresh linens, and professional equipment. Free Home Beauty Services are offered across Dubai & Sharjah with zero travel fee."
   },
   {
     question: "Are appointment slots confirmed immediately?",

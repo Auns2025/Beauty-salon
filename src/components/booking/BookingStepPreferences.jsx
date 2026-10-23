@@ -21,9 +21,15 @@ export default function BookingStepPreferences({ onBack, onNext }) {
   const [errorMessage, setErrorMessage] = useState('');
   const minDate = getMinDateString();
 
-  const timeSlots = BUSINESS_CONFIG.hours.slotHours.map(hour => ({
-    raw: String(hour),
-    label: formatTimeSlot(hour)
+  const timeSlots = (BUSINESS_CONFIG.hours.arrivalSlots || [
+    { label: "9:00 AM", value: "9:00 AM" },
+    { label: "12:00 PM", value: "12:00 PM" },
+    { label: "3:00 PM", value: "3:00 PM" },
+    { label: "5:30 PM", value: "5:30 PM" },
+    { label: "7:30 PM", value: "7:30 PM" },
+  ]).map(slot => ({
+    raw: slot.value || slot.label,
+    label: slot.label
   }));
 
   const handleProceed = () => {
@@ -112,8 +118,8 @@ export default function BookingStepPreferences({ onBack, onNext }) {
                 <p className="text-xs text-mutedText font-light mt-1">
                   Our certified beauty specialists arrive at your residence with sanitized kits and fresh linens.
                 </p>
-                <div className="mt-2 text-[10px] uppercase font-sans tracking-wider text-gold-deep">
-                  + PKR {BUSINESS_CONFIG.homeServiceFee} Home Logistics Fee
+                <div className="mt-2 text-[10px] uppercase font-sans tracking-wider text-gold-deep font-semibold">
+                  Free Home Service across Dubai & Sharjah
                 </div>
               </div>
             </div>
@@ -190,7 +196,7 @@ export default function BookingStepPreferences({ onBack, onNext }) {
         <label className="block text-[11px] font-sans uppercase tracking-[0.2em] text-champagne font-semibold">
           Preferred Arrival Time Slot
         </label>
-        <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-2.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-2.5">
           {timeSlots.map((slot) => {
             const isSelected = appointmentTime === slot.label || appointmentTime === slot.raw;
             return (

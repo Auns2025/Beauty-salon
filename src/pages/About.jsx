@@ -43,7 +43,7 @@ export default function About() {
                     Home Concierge
                   </div>
                   <p className="text-xs text-mutedText">
-                    Fixed PKR 500 logistics fee across Lahore with complete sanitized kits.
+                    Free Home Service across Dubai & Sharjah with complete sanitized kits.
                   </p>
                 </div>
               </div>
@@ -54,7 +54,7 @@ export default function About() {
               <div className="aspect-[4/5] rounded-sm overflow-hidden border border-gold/40 shadow-luxury">
                 <img
                   src="/images/hero/salon-ambience.jpg"
-                  alt="SM Home Beauty Studio Ambience"
+                  alt="S&M Home Beauty Salon Studio Ambience"
                   loading="lazy"
                   className="w-full h-full object-cover object-center"
                 />

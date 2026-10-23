@@ -26,10 +26,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
+        { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
-    { name: 'Book', path: '/booking' },
+    // { name: 'Book', path: '/booking' },
     { name: 'Gallery', path: '/gallery' },
-    { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -55,15 +55,19 @@ export default function Navbar() {
               to="/"
               className="group flex items-center gap-2.5 focus:outline-none focus:ring-1 focus:ring-gold"
             >
-              <div className="w-8 h-8 rounded-full border border-gold/60 flex items-center justify-center bg-chocolate group-hover:border-gold transition-colors">
-                <span className="font-sans font-bold text-gold text-xs tracking-wider">SM</span>
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gold/60 overflow-hidden flex items-center justify-center bg-chocolate group-hover:border-gold transition-colors flex-shrink-0 shadow-sm">
+                <img
+                  src="/favicon.png"
+                  alt="S&M Home Beauty Salon Logo"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
               <div className="flex flex-col">
-                <span className="font-sans text-sm sm:text-base font-bold tracking-[0.18em] uppercase text-ivory group-hover:text-gold transition-colors">
-                  SM Home Beauty
+                <span className="font-sans text-sm sm:text-base font-bold tracking-[0.16em] uppercase text-ivory group-hover:text-gold transition-colors">
+                  S&M Home Beauty Salon
                 </span>
-                <span className="text-[8px] uppercase tracking-[0.25em] text-gold/80 font-sans -mt-0.5 hidden sm:block">
-                  Luxury Salon & Concierge
+                <span className="text-[8px] uppercase tracking-[0.22em] text-gold/80 font-sans -mt-0.5 hidden sm:block">
+                  Dubai & Sharjah · Free Home Service
                 </span>
               </div>
             </Link>

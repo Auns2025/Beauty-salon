@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useBooking } from '../../context/BookingContext';
 import Button from '../common/Button';
 import { Sparkles, Heart, Check, Clock } from 'lucide-react';
-import { formatPKR } from '../../utils/pricing';
+import { formatAED } from '../../utils/pricing';
 
 export default function BridalShowcase() {
   const { toggleService, isServiceSelected } = useBooking();
@@ -47,7 +47,7 @@ export default function BridalShowcase() {
                   </div>
                   <div className="text-right">
                     <span className="font-sans text-xl sm:text-2xl font-extrabold text-gold-light block">
-                      {formatPKR(25000)}
+                      {formatAED(450)}
                     </span>
                     <span className="text-[10px] text-ivory/60 font-sans">
                       180 Minutes
@@ -101,7 +101,7 @@ export default function BridalShowcase() {
                 onClick={() => toggleService("m2")}
                 className="w-full sm:w-auto"
               >
-                {bridalSelected ? "Bridal Added to Tray ✓" : "Add Bridal Makeup (PKR 25,000)"}
+                {bridalSelected ? "Bridal Added to Tray ✓" : "Add Bridal Makeup (AED 330)"}
               </Button>
 
               <Link to="/booking">

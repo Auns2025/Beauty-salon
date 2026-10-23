@@ -51,7 +51,7 @@ export default function HomeServiceExperience() {
             </h2>
 
             <p className="text-sm sm:text-base text-mutedText font-light leading-relaxed">
-              Why navigate traffic and crowded lobbies when bespoke hair transformations, revitalizing facials, and couture makeup can be experienced in your own private sanctuary? We deliver the complete boutique salon experience directly to your residence across Lahore for a fixed PKR 500 concierge fee.
+              Why navigate traffic and crowded lobbies when bespoke hair transformations, revitalizing facials, and couture makeup can be experienced in your own private sanctuary? We deliver the complete boutique salon experience directly to your residence across Dubai & Sharjah with complimentary Free Home Service.
             </p>
 
             {/* Step sequence */}
@@ -85,7 +85,7 @@ export default function HomeServiceExperience() {
               </Button>
               <div className="text-xs text-mutedText flex items-center gap-1.5">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Fixed PKR {BUSINESS_CONFIG.homeServiceFee} fee across Lahore</span>
+                <span>Free Home Service across Dubai & Sharjah</span>
               </div>
             </div>
           </div>

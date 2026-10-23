@@ -1,14 +1,17 @@
 import { BUSINESS_CONFIG } from '../config/business';
 
 /**
- * Format number as PKR currency
+ * Format number as AED currency (United Arab Emirates Dirham)
  * @param {number} amount
- * @returns {string} e.g. "PKR 1,500"
+ * @returns {string} e.g. "AED 180"
  */
-export function formatPKR(amount = 0) {
+export function formatAED(amount = 0) {
   const num = typeof amount === 'number' ? amount : Number(amount) || 0;
-  return `PKR ${num.toLocaleString('en-US')}`;
+  return `AED ${num.toLocaleString('en-US')}`;
 }
+
+// Backward compatibility alias: ensures any legacy call prints AED
+export const formatPKR = formatAED;
 
 /**
  * Format minutes into friendly string
@@ -29,16 +32,23 @@ export function formatDuration(minutes = 0) {
 }
 
 /**
- * Convert 24-hour hour integer to readable 12-hour format
- * @param {number} hour (e.g. 10, 14)
- * @returns {string} e.g. "10:00 AM", "2:00 PM"
+ * Convert hour integer or time string to readable 12-hour format
+ * @param {number|string} hour (e.g. 9, 17.5, "5:30 PM")
+ * @returns {string} e.g. "9:00 AM", "5:30 PM"
  */
 export function formatTimeSlot(hour) {
+  if (!hour && hour !== 0) return '';
+  if (typeof hour === 'string' && (hour.includes('AM') || hour.includes('PM'))) {
+    return hour;
+  }
   const h = Number(hour);
-  if (isNaN(h)) return '';
-  const period = h >= 12 ? 'PM' : 'AM';
-  const displayHour = h > 12 ? h - 12 : (h === 0 ? 12 : h);
-  return `${displayHour}:00 ${period}`;
+  if (isNaN(h)) return String(hour);
+  const minutes = Math.round((h % 1) * 60);
+  const hourInt = Math.floor(h);
+  const period = hourInt >= 12 ? 'PM' : 'AM';
+  const displayHour = hourInt > 12 ? hourInt - 12 : (hourInt === 0 ? 12 : hourInt);
+  const displayMinutes = minutes > 0 ? `:${String(minutes).padStart(2, '0')}` : ':00';
+  return `${displayHour}${displayMinutes} ${period}`;
 }
 
 /**
@@ -63,24 +73,24 @@ export function generateBookingRef() {
 /**
  * Calculate financial totals and time estimations
  */
-export function calculateTotals(selectedServices = [], serviceLocation = 'Salon') {
-  const servicesList = Array.isArray(selectedServices) ? selectedServices : [];
-  const subtotal = servicesList.reduce((acc, s) => acc + (Number(s.price) || 0), 0);
-  const totalMinutes = servicesList.reduce((acc, s) => acc + (Number(s.durationMinutes) || 0), 0);
+export function calculateTotals(selectedItems = [], serviceLocation = 'Salon') {
+  const itemsList = Array.isArray(selectedItems) ? selectedItems : [];
+  const subtotal = itemsList.reduce((acc, s) => acc + (Number(s.price) || 0), 0);
+  const totalMinutes = itemsList.reduce((acc, s) => acc + (Number(s.durationMinutes) || 0), 0);
   
   const isHome = serviceLocation === 'At Home';
-  const homeFee = (isHome && servicesList.length > 0) ? BUSINESS_CONFIG.homeServiceFee : 0;
+  const homeFee = (isHome && itemsList.length > 0) ? (BUSINESS_CONFIG.homeServiceFee || 0) : 0;
   const grandTotal = subtotal + homeFee;
 
   return {
-    itemCount: servicesList.length,
+    itemCount: itemsList.length,
     subtotal,
     homeFee,
     grandTotal,
     totalMinutes,
-    formattedSubtotal: formatPKR(subtotal),
-    formattedHomeFee: formatPKR(homeFee),
-    formattedGrandTotal: formatPKR(grandTotal),
+    formattedSubtotal: formatAED(subtotal),
+    formattedHomeFee: homeFee === 0 ? 'Free (Dubai & Sharjah)' : formatAED(homeFee),
+    formattedGrandTotal: formatAED(grandTotal),
     formattedDuration: formatDuration(totalMinutes)
   };
 }

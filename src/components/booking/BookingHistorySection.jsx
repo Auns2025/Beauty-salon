@@ -1,6 +1,6 @@
 import React from 'react';
 import { useBooking } from '../../context/BookingContext';
-import { formatPKR } from '../../utils/pricing';
+import { formatAED } from '../../utils/pricing';
 import { Clock, Calendar, MapPin, Trash2, Info } from 'lucide-react';
 
 export default function BookingHistorySection() {
@@ -68,7 +68,7 @@ export default function BookingHistorySection() {
 
             <div className="flex items-center gap-4 sm:flex-col sm:items-end w-full sm:w-auto justify-between sm:justify-center pt-2 sm:pt-0 border-t sm:border-t-0 border-beige/60">
               <div className="font-serif text-xl font-bold text-espresso">
-                {formatPKR(req.total)}
+                {formatAED(req.total)}
               </div>
 
               <button

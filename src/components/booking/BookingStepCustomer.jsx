@@ -170,14 +170,15 @@ export default function BookingStepCustomer({ onBack, onSubmit }) {
       {/* Navigation Buttons */}
       <div className="pt-6 border-t border-beige flex items-center justify-between">
         <Button
-          type="button"
-          variant="outline"
-          size="md"
-          onClick={onBack}
-          icon={ArrowLeft}
-        >
-          Back: Preferences
-        </Button>
+  type="button"
+  variant="outline"
+  size="md"
+  onClick={onBack}
+  icon={ArrowLeft}
+  className="!text-black !bg-[#d9b46a] hover:!bg-[#B8863B] hover:!text-black border-[#d9b46a] hover:border-[#B8863B] transition-colors"
+>
+  Back: Preferences
+</Button>
         <Button
           type="submit"
           variant="primary"

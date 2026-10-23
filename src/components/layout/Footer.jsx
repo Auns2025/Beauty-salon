@@ -14,11 +14,15 @@ export default function Footer() {
           {/* Brand Manifesto */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center gap-2.5 mb-4 group">
-              <div className="w-8 h-8 rounded-full border border-gold/60 flex items-center justify-center bg-chocolate">
-                <span className="font-sans font-bold text-gold text-xs tracking-wider">SM</span>
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gold/60 overflow-hidden flex items-center justify-center bg-chocolate flex-shrink-0 shadow-sm group-hover:border-gold transition-colors">
+                <img
+                  src="/favicon.png"
+                  alt="S&M Home Beauty Salon Logo"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
-              <span className="font-sans text-lg font-bold tracking-[0.18em] uppercase text-ivory group-hover:text-gold transition-colors">
-                SM Home Beauty
+              <span className="font-sans text-lg font-bold tracking-[0.16em] uppercase text-ivory group-hover:text-gold transition-colors">
+                S&M Home Beauty Salon
               </span>
             </Link>
             <p className="text-xs text-ivory/70 font-light leading-relaxed mb-5">
@@ -129,7 +133,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                <span>Studio Appointments & Home Visits (PKR 500 fee across city limits)</span>
+                <span>Dubai & Sharjah, UAE (Free Home Service across city limits)</span>
               </div>
               <div className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
@@ -137,10 +141,10 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Verification reminder box */}
-            <div className="mt-4 p-2.5 bg-chocolate border border-gold/20 rounded-sm text-[11px] text-ivory/60 flex items-start gap-2">
-              <AlertCircle className="w-3.5 h-3.5 text-gold flex-shrink-0 mt-0.5" />
-              <span>Contact details configurable in <code className="text-gold">business.js</code> prior to live launch.</span>
+            {/* UAE Direct Dispatch info */}
+            <div className="mt-4 p-2.5 bg-chocolate border border-gold/20 rounded-sm text-[11px] text-ivory/70 flex items-start gap-2">
+              <Sparkles className="w-3.5 h-3.5 text-gold flex-shrink-0 mt-0.5" />
+              <span>Serving residential clients across Dubai & Sharjah with sanitized mobile salon kits.</span>
             </div>
           </div>
         </div>
@@ -151,9 +155,9 @@ export default function Footer() {
             © {currentYear} {BUSINESS_CONFIG.name}. All rights reserved.
           </div>
           <div className="flex items-center gap-4 text-ivory/60">
-            <span>Currency: PKR</span>
+            <span>Currency: AED</span>
             <span>·</span>
-            <span>Home Service: PKR 500</span>
+            <span>Free Home Service (Dubai & Sharjah)</span>
             <span>·</span>
             <span className="text-gold font-medium">Bespoke Quiet Luxury</span>
           </div>

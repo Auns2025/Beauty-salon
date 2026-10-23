@@ -31,14 +31,7 @@ export default function Gallery() {
           subtitle="A visual celebration of high-definition bridal artistry, radiant dermal treatments, hair transformations, and tranquil salon architecture."
         />
 
-        {/* Stock / Demonstration Notice Banner */}
-        <div className="mb-8 p-4 bg-white border border-beige rounded-sm shadow-sm max-w-2xl mx-auto flex items-start gap-3 text-xs text-mutedText">
-          <Info className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-          <div>
-            <span className="font-semibold text-espresso">Editorial Portfolio Reference: </span>
-            Photographs in this gallery represent authentic salon treatment aesthetics and editorial standards. Genuine client transformation imagery is refreshed continually on our verified Instagram profile.
-          </div>
-        </div>
+      
 
         {/* Filter Categories */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-12">

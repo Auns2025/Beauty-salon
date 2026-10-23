@@ -1,62 +1,58 @@
 /**
- * Centralized Business Configuration for SM Home Beauty
- * 
- * Fields marked with `requiresVerification: true` are client-specific items
- * from the prototype that must be replaced by the business owner before production launch.
+ * Centralized Business Configuration for S&M Home Beauty Salon
+ * Operating in Dubai & Sharjah, UAE
  */
 
 export const BUSINESS_CONFIG = {
-  name: "SM Home Beauty",
-  legalName: "SM Home Beauty Studio & Concierge",
+  name: "S&M Home Beauty Salon",
+  legalName: "S&M Home Beauty Salon Concierge & Studio",
   tagline: "Hair, skin, bridal and nail artistry in a world of quiet luxury",
-  subTagline: "At our boutique studio or in the sanctuary of your home.",
+  subTagline: "At our boutique studio or in the sanctuary of your home across Dubai & Sharjah.",
   
-  // Currency & Fees (Strict prototype preservation)
-  currency: "PKR",
-  currencySymbol: "PKR",
-  homeServiceFee: 500,
+  // Currency & Fees (AED with Free Home Service across Dubai & Sharjah)
+  currency: "AED",
+  currencySymbol: "AED",
+  homeServiceFee: 0, // Free Home Service in Dubai & Sharjah
 
-  // Working Hours (10:00 AM – 7:00 PM)
+  // Working Hours & Arrival Time Slots (Daily 9:00 AM – 8:00 PM)
   hours: {
-    display: "Daily 10:00 AM – 7:00 PM",
-    openHour: 10,
-    closeHour: 19,
-    slotHours: [10, 11, 12, 13, 14, 15, 16, 17, 18], // 10 AM to 6 PM starts
+    display: "Daily 9:00 AM – 8:00 PM",
+    openHour: 9,
+    closeHour: 20,
+    // 5 Official Arrival Slots requested by salon
+    arrivalSlots: [
+      { id: "slot-9am", label: "9:00 AM", value: "9:00 AM" },
+      { id: "slot-12pm", label: "12:00 PM", value: "12:00 PM" },
+      { id: "slot-3pm", label: "3:00 PM", value: "3:00 PM" },
+      { id: "slot-530pm", label: "5:30 PM", value: "5:30 PM" },
+      { id: "slot-730pm", label: "7:30 PM", value: "7:30 PM" },
+    ],
+    slotHours: ["9:00 AM", "12:00 PM", "3:00 PM", "5:30 PM", "7:30 PM"],
   },
 
-  // Contact Details
+  // Contact Details (Yahan se aap WhatsApp number aur display change kar saktay hain)
   contact: {
-    whatsappNumber: "923000000000", // Country code 92 + number
-    whatsappDisplay: "+92 300 0000000",
-    phoneDisplay: "+92 300 0000000",
-    email: "concierge@smhomebeauty.com",
+    whatsappNumber: "971553939683", // UAE WhatsApp country code +971
+    whatsappDisplay: "+971 55 393 9683", // Website par show honay wala formatted number
+    phoneDisplay: "+971 55 393 9683",
+    email: "info@smhomebeautysalon.com",
     instagram: "@sm.homebeauty",
     instagramUrl: "https://instagram.com/sm.homebeauty",
     address: {
-      line1: "Boutique Studio Suite 4B, Gulberg / DHA",
-      city: "Lahore",
-      country: "Pakistan",
-      display: "Suite 4B, Gulberg / DHA, Lahore (Studio appointments & Home visits across Lahore)",
+      line1: "Luxury Salon Studio",
+      city: "Dubai & Sharjah",
+      country: "United Arab Emirates",
+      display: "Dubai & Sharjah, United Arab Emirates (Studio Appointments & Free Home Beauty Concierge)",
     },
-    // Verification flags required by prompt
-    requiresVerification: {
-      whatsappNumber: true,
-      address: true,
-      phoneDisplay: true,
-      email: true,
-    },
-    verificationNotes: [
-      "Replace '923000000000' with the verified business WhatsApp number for direct booking dispatch.",
-      "Update salon physical address with exact studio street address and building coordinates.",
-      "Confirm operating salon phone number and contact email."
-    ]
+    serviceLocations: "Dubai & Sharjah, UAE",
+    homeServiceNote: "Free Home Service across Dubai & Sharjah"
   },
 
-  // Metrics / Social Proof from original prototype
+  // Metrics / Social Proof
   stats: [
     { label: "Happy Clients", value: "500+" },
     { label: "Client Rating", value: "4.9★" },
-    { label: "Curated Services", value: "11+" },
-    { label: "Service Mode", value: "Studio & Home" }
+    { label: "Curated Packages", value: "11" },
+    { label: "Service Mode", value: "Studio & Free Home" }
   ]
 };

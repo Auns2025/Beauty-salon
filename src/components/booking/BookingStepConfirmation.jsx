@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useBooking } from '../../context/BookingContext';
 import { createWhatsAppLink, buildWhatsAppMessage } from '../../utils/whatsapp';
-import { formatPKR, formatDuration } from '../../utils/pricing';
+import { formatAED, formatDuration } from '../../utils/pricing';
+import { BUSINESS_CONFIG } from '../../config/business';
 import Button from '../common/Button';
 import { MessageCircle, Copy, Check, Calendar, Clock, MapPin, User, Sparkles, RefreshCw, ShieldAlert } from 'lucide-react';
 
@@ -92,20 +93,20 @@ export default function BookingStepConfirmation() {
               {confirmedRequest.services.map((s, idx) => (
                 <div key={idx} className="flex justify-between text-darkText/90">
                   <span>• {s.name}</span>
-                  <span className="font-medium text-espresso">{formatPKR(s.price)}</span>
+                  <span className="font-medium text-espresso">{formatAED(s.price)}</span>
                 </div>
               ))}
               {confirmedRequest.homeFee > 0 && (
                 <div className="flex justify-between text-gold-deep pt-1 border-t border-beige">
                   <span>• Home Concierge Fee</span>
-                  <span className="font-medium">{formatPKR(confirmedRequest.homeFee)}</span>
+                  <span className="font-medium">{formatAED(confirmedRequest.homeFee)}</span>
                 </div>
               )}
             </div>
 
             <div className="pt-2 border-t border-gold/40 flex justify-between items-baseline">
-              <span className="text-xs uppercase font-sans tracking-wider text-mutedText font-medium">Estimated Total</span>
-              <span className="font-serif text-2xl font-bold text-gold-deep">{formatPKR(confirmedRequest.total)}</span>
+              <span className="text-xs uppercase font-sans tracking-wider text-mutedText font-medium">Total Investment</span>
+              <span className="font-sans text-2xl font-bold text-gold-deep">{formatAED(confirmedRequest.total)}</span>
             </div>
           </div>
         </div>
@@ -151,7 +152,7 @@ export default function BookingStepConfirmation() {
 
           <div className="text-[11px] text-ivory/50 flex items-center justify-center gap-1.5 pt-1">
             <ShieldAlert className="w-3.5 h-3.5 text-gold/70" />
-            <span>If WhatsApp does not open automatically, copy the message text and send to +92 300 0000000.</span>
+            <span>If WhatsApp does not open automatically, copy the message text and send to {BUSINESS_CONFIG.contact.whatsappDisplay}.</span>
           </div>
         </div>
 
