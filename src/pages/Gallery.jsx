@@ -12,7 +12,7 @@ export default function Gallery() {
 
   const filteredItems = activeCategory === 'All'
     ? GALLERY_ITEMS
-    : GALLERY_ITEMS.filter(item => item.category === activeCategory);
+    : GALLERY_ITEMS.filter(item => item.category?.trim().toLowerCase() === activeCategory?.trim().toLowerCase());
 
   const handleOpenLightbox = (item) => {
     const originalIndex = GALLERY_ITEMS.findIndex(i => i.id === item.id);
@@ -37,7 +37,9 @@ export default function Gallery() {
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-12">
           {GALLERY_CATEGORIES.map((cat) => {
             const isCurrent = activeCategory === cat;
-            const count = cat === 'All' ? GALLERY_ITEMS.length : GALLERY_ITEMS.filter(i => i.category === cat).length;
+            const count = cat === 'All' 
+              ? GALLERY_ITEMS.length 
+              : GALLERY_ITEMS.filter(i => i.category?.trim().toLowerCase() === cat?.trim().toLowerCase()).length;
 
             return (
               <button

@@ -31,13 +31,13 @@ export default function HeroFloatingCard({
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5 text-[9px] uppercase tracking-[0.2em] text-[#D9B46A] font-semibold mb-0.5">
             <Sparkles className="w-2.5 h-2.5 text-[#F0D394]" />
-            <span>HAUTE BRIDAL</span>
+            <span>Partywear</span>
           </div>
           <div className="text-xs sm:text-[13px] font-bold text-[#F8F5F0] truncate font-sans">
             Luminous Velvet Glam
           </div>
           <div className="text-[10px] sm:text-[11px] text-[#D9B46A] font-medium tracking-wide mt-0.5">
-            AED 450 · 180 min
+            {/* AED 450 · 180 min */}
           </div>
         </div>
       </motion.div>

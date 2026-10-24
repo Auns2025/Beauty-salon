@@ -9,29 +9,25 @@ export default function ServiceShowcase() {
       name: "Hair Artistry",
       query: "Hair & Styling",
       desc: "Precision cuts, blowouts, global color, and keratin infusion therapy.",
-      image: "/images/services/hair-colour.jpg",
-      startingPrice: "From AED 35"
+      image: "/images/services/Luxury Blow-Dry and Balayage Waves.jpg",
     },
     {
       name: "Dermal Skincare",
       query: "Facials & Skin Treatments",
       desc: "24K Gold facials, avocado glow therapies, and ultrasonic purification.",
-      image: "/images/services/glow-facial.jpg",
-      startingPrice: "From AED 40"
+      image: "/images/services/Luxury Gold Facial Spa Treatment.jpg",
     },
     {
-      name: "Bridal & Glam Makeup",
+      name: "Party & Glam Makeup",
       query: "Bridal Makeup",
       desc: "Flawless HD couture looks, trial consultations, and party glam.",
       image: "/images/services/bridal-makeup.jpg",
-      startingPrice: "From AED 180"
     },
     {
       name: "Nail Architecture",
       query: "Manicure & Pedicure",
       desc: "Acrylic nail extensions, high-shine gel polish, and deluxe spa pedicures.",
       image: "/images/services/manicure.jpg",
-      startingPrice: "From AED 45"
     }
   ];
 

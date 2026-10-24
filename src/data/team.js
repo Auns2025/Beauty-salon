@@ -14,9 +14,9 @@ export const TEAM_MEMBERS = [
     id: "hira",
     name: "Hira",
     title: "Master Makeup Artist",
-    specialty: "HD Bridal Artistry & Couture Glam",
-    experience: "7+ Years Bridal Experience",
-    bio: "Passionate about creating luminous, breathable skin textures that radiate under studio and reception lighting. Specialized in South Asian bridal transformations and timeless looks.",
+    specialty: "HD party Artistry & Couture Glam",
+    experience: "7+ Years party Experience",
+    bio: "Passionate about creating luminous, breathable skin textures that radiate under studio and reception lighting. Specialized in South Asian party transformations and timeless looks.",
     initials: "HR",
     verifiedProfile: false,
     placeholderNote: "Verified Artist Profile (Studio Staff Photo Pending Verification)"

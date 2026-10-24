@@ -1,6 +1,6 @@
 export const GALLERY_CATEGORIES = [
   "All",
-  "Bridal Makeup",
+  "Party Makeup",
   "Hair Styling",
   "Hair Colour",
   "Skin Treatments",
@@ -12,10 +12,10 @@ export const GALLERY_ITEMS = [
   {
     id: "g1",
     title: "Imperial Bridal Glow",
-    category: "Bridal Makeup",
+    category: "Party Makeup",
     image: "/images/gallery/gal-bridal-1.jpg",
     aspect: "aspect-[3/4]",
-    caption: "HD traditional bridal makeover with luminous sculpted radiance and warm gold highlights.",
+    caption: "HD traditional party makeover with luminous sculpted radiance and warm gold highlights.",
     isDemonstrationAsset: true
   },
   {
@@ -39,10 +39,10 @@ export const GALLERY_ITEMS = [
   {
     id: "g4",
     title: "Luminous Velvet Glam",
-    category: "Bridal Makeup",
+    category: "Party Makeup",
     image: "/images/gallery/gal-bridal-2.jpg",
     aspect: "aspect-[4/5]",
-    caption: "Barat & Walima couture bridal artistry featuring soft smoke eyes and petal velvet lips.",
+    caption: "Barat & Walima couture party artistry featuring soft smoke eyes and petal velvet lips.",
     isDemonstrationAsset: true
   },
   {
@@ -75,8 +75,8 @@ export const GALLERY_ITEMS = [
   {
     id: "g8",
     title: "Editorial Evening Glam",
-    category: "Bridal Makeup",
-    image: "/images/gallery/gal-makeup-1.jpg",
+    category: "Party Makeup",
+    image: "/images/services/Bridal Lipstick Application in a Glamorous Studio.jpg",
     aspect: "aspect-[4/5]",
     caption: "Red-carpet photography-ready makeup with flawless skin finish and individual lashes.",
     isDemonstrationAsset: true
@@ -108,13 +108,22 @@ export const GALLERY_ITEMS = [
     caption: "Sculpted almond extensions with delicate micro-pearl and glazed chrome finish.",
     isDemonstrationAsset: true
   },
-  {
-    id: "g12",
-    title: "Bridal Consultation & Prep",
-    category: "Bridal Makeup",
-    image: "/images/gallery/gal-makeup-2.jpg",
-    aspect: "aspect-[3/4]",
-    caption: "One-on-one shade calibration and bridal look design tailored to bridal trousseau.",
-    isDemonstrationAsset: true
-  }
+  // {
+  //   id: "g12",
+  //   title: "Signature Party Makeup & Glam",
+  //   category: "Party Makeup",
+  //   image: "/images/gallery/gal-makeup-2.jpg",
+  //   aspect: "aspect-[3/4]",
+  //   caption: "One-on-one shade calibration and signature evening makeover tailored to your event.",
+  //   isDemonstrationAsset: true
+  // },
+  // {
+  //   id: "g13",
+  //   title: "Soft Velvet Party Glamour",
+  //   category: "Party Makeup",
+  //   image: "/images/gallery/gal-makeup-1.jpg",
+  //   aspect: "aspect-[3/4]",
+  //   caption: "Flawless HD party makeup with sculpted contour and soft neutral tones.",
+  //   isDemonstrationAsset: true
+  // }
 ];

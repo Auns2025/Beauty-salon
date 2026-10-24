@@ -1,20 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useBooking } from '../../context/BookingContext';
 import Button from '../common/Button';
-import { Sparkles, Heart, Check, Clock } from 'lucide-react';
+import { Sparkles, Heart, Check, Clock, ArrowRight } from 'lucide-react';
 import { formatAED } from '../../utils/pricing';
 
 export default function BridalShowcase() {
-  const { toggleService, isServiceSelected } = useBooking();
+  const navigate = useNavigate();
+  const { addService, isServiceSelected, setCurrentStep } = useBooking();
   const bridalSelected = isServiceSelected("m2");
+
+  const handleBookPartyMakeup = () => {
+    addService("m2");
+    setCurrentStep(1);
+    navigate('/booking');
+  };
 
   const highlights = [
     "One-on-one advance shade & jewelry consultation",
     "Waterproof HD complexion base enduring 14+ hours",
     "Custom mink-effect lash sculpting & brow contouring",
     "Precision dupatta pinning and jewelry placement assistance",
-    "Available in our private studio suite or bridal dressing at your venue"
+    "Available in our private studio suite or party dressing at your venue"
   ];
 
   return (
@@ -24,12 +31,12 @@ export default function BridalShowcase() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Authentic Bridal Editorial Photo */}
+          {/* Left Column: Authentic Party Editorial Photo */}
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[4/5] rounded-sm overflow-hidden border-2 border-gold/40 shadow-2xl">
               <img
-                src="/images/services/bridal-makeup.jpg"
-                alt="Haute Couture Bridal Artistry"
+                src="/images/services/Bridal Lipstick Application in a Glamorous Studio.jpg"
+                alt="Haute Couture Party Artistry"
                 loading="lazy"
                 className="w-full h-full object-cover object-top filter brightness-95"
               />
@@ -39,7 +46,7 @@ export default function BridalShowcase() {
                 <div className="flex items-center justify-between text-ivory">
                   <div>
                     <span className="text-[10px] uppercase font-sans tracking-[0.2em] text-gold block">
-                      Haute Couture Bridal
+                      Haute Couture Party
                     </span>
                     <span className="font-sans text-lg sm:text-xl font-bold uppercase tracking-wide">
                       Luminous Velvet Glam
@@ -47,7 +54,7 @@ export default function BridalShowcase() {
                   </div>
                   <div className="text-right">
                     <span className="font-sans text-xl sm:text-2xl font-extrabold text-gold-light block">
-                      {formatAED(450)}
+                      {formatAED(350)}
                     </span>
                     <span className="text-[10px] text-ivory/60 font-sans">
                       180 Minutes
@@ -59,7 +66,7 @@ export default function BridalShowcase() {
 
             {/* Accent badge */}
             <div className="absolute -top-4 -left-4 bg-gold text-espresso font-sans text-[10px] uppercase tracking-[0.2em] font-bold px-4 py-2 rounded-sm shadow-lg">
-              Signature Bridal Suite
+              Signature Party Suite
             </div>
           </div>
 
@@ -71,14 +78,14 @@ export default function BridalShowcase() {
             </div>
 
             <h2 className="font-sans text-2xl sm:text-4xl lg:text-5xl font-extrabold text-ivory tracking-tight uppercase leading-[1.12]">
-              Couture Bridal <br />
+              Couture Party <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold-deep">
                 Master Artistry
               </span>
             </h2>
 
             <p className="text-sm sm:text-base text-ivory/80 font-light leading-relaxed">
-              Every bride deserves an atmosphere of serene, unhurried luxury on her wedding day. Our master makeup artists blend high-fashion bridal contouring with classical timeless elegance, ensuring you radiate with effortless poise through every photograph and tear of joy.
+              Every guest deserves an atmosphere of serene, unhurried luxury on her special day. Our master makeup artists blend high-fashion party contouring with classical timeless elegance, ensuring you radiate with effortless poise through every photograph and moment of joy.
             </p>
 
             {/* Checklist */}
@@ -96,12 +103,14 @@ export default function BridalShowcase() {
             {/* CTA Group */}
             <div className="pt-6 border-t border-gold/20 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Button
-                variant={bridalSelected ? "secondary" : "primary"}
+                variant="primary"
                 size="lg"
-                onClick={() => toggleService("m2")}
+                onClick={handleBookPartyMakeup}
                 className="w-full sm:w-auto"
+                icon={ArrowRight}
+                iconPosition="right"
               >
-                {bridalSelected ? "Bridal Added to Tray ✓" : "Add Bridal Makeup (AED 330)"}
+                {bridalSelected ? "Party Makeup Added — Book Now" : "Add Party Makeup (AED 350)"}
               </Button>
 
               <Link to="/booking">

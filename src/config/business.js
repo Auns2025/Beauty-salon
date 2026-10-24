@@ -38,6 +38,7 @@ export const BUSINESS_CONFIG = {
     email: "info@smhomebeautysalon.com",
     instagram: "@sm.homebeauty",
     instagramUrl: "https://instagram.com/sm.homebeauty",
+    facebookUrl: "https://www.facebook.com/profile.php?id=61579842081839&ref=PROFILE_EDIT_xav_ig_profile_page_web#",
     address: {
       line1: "Luxury Salon Studio",
       city: "Dubai & Sharjah",

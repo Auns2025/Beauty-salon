@@ -188,7 +188,7 @@ export default function Contact() {
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. 0300 1234567"
+                    placeholder="e.g. +971 55 123 4567 or 055 123 4567"
                     value={inquiryPhone}
                     onChange={(e) => setInquiryPhone(e.target.value)}
                     className="w-full bg-ivory border border-beige px-3.5 py-3 text-xs text-darkText font-sans focus:outline-none focus:border-gold"

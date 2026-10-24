@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Instagram, MessageCircle, MapPin, Clock, Phone, AlertCircle } from 'lucide-react';
+import { Sparkles, Instagram, Facebook, MessageCircle, MapPin, Clock, Phone, AlertCircle } from 'lucide-react';
 import { BUSINESS_CONFIG } from '../../config/business';
 import { createGeneralInquiryLink } from '../../utils/whatsapp';
 
@@ -37,6 +37,15 @@ export default function Footer() {
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href={BUSINESS_CONFIG.contact.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full border border-gold/40 flex items-center justify-center text-gold hover:bg-gold hover:text-espresso transition-all"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
               </a>
               <a
                 href={createGeneralInquiryLink("Concierge Inquiry")}

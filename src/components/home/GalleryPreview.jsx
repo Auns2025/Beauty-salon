@@ -65,7 +65,7 @@ export default function GalleryPreview() {
         <div className="mt-12 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/gallery">
             <Button variant="primary" size="md" icon={ArrowRight} iconPosition="right">
-              View Complete Gallery (12 Looks)
+              View Complete Gallery ({GALLERY_ITEMS.length} Looks)
             </Button>
           </Link>
 

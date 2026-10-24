@@ -14,8 +14,8 @@ export default function BookingStepCustomer({ onBack, onSubmit }) {
     }
 
     const cleanPhone = customerInfo.phone ? customerInfo.phone.replace(/\D/g, '') : '';
-    if (!customerInfo.phone || cleanPhone.length < 10) {
-      errs.phone = 'Please provide a valid WhatsApp / Phone number with at least 10 digits.';
+    if (!customerInfo.phone || cleanPhone.length < 9) {
+      errs.phone = 'Please provide a valid UAE WhatsApp / Phone number (e.g. 055 123 4567 or +971 55 123 4567).';
     }
 
     if (serviceLocation === 'At Home' && (!customerInfo.address || customerInfo.address.trim().length < 5)) {
@@ -90,7 +90,7 @@ export default function BookingStepCustomer({ onBack, onSubmit }) {
             type="tel"
             inputMode="tel"
             autoComplete="tel"
-            placeholder="e.g. 0300 1234567 or +92 300 1234567"
+            placeholder="e.g. 055 123 4567 or +971 55 123 4567"
             value={customerInfo.phone}
             onChange={(e) => {
               setCustomerInfo(prev => ({ ...prev, phone: e.target.value }));
@@ -129,7 +129,7 @@ export default function BookingStepCustomer({ onBack, onSubmit }) {
             id="customer-address"
             type="text"
             autoComplete="street-address"
-            placeholder={serviceLocation === 'At Home' ? 'House / Flat #, Street, Block, Phase, Area (e.g. DHA / Gulberg)' : 'Optional'}
+            placeholder={serviceLocation === 'At Home' ? 'Villa / Apartment #, Street, Building, Area (e.g. Downtown Dubai / Dubai Marina / Al Majaz)' : 'Optional'}
             value={customerInfo.address}
             onChange={(e) => {
               setCustomerInfo(prev => ({ ...prev, address: e.target.value }));

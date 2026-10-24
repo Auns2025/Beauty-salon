@@ -1,9 +1,9 @@
 export const TESTIMONIALS = [
   {
     id: 1,
-    quote: "Bridal makeup was flawless and lasted all night. Highly recommend!",
+    quote: "party makeup was flawless and lasted all night. Highly recommend!",
     client: "Ayesha K.",
-    service: "Bridal Couture Makeup",
+    service: "Party Couture Makeup",
     location: "Studio Appointment",
     rating: 5,
     highlight: "Flawless Durability"
@@ -46,8 +46,8 @@ export const FAQS = [
     answer: "Yes. We kindly request at least 24 hours advance notice via WhatsApp or phone so we can accommodate other clients on our waitlist. You can reference your booking ID (e.g. SM1234) for fast adjustments."
   },
   {
-    question: "What bridal packages and trial consultations do you provide?",
-    answer: "Our Bridal Makeup service includes a dedicated consultation session to design a tailored aesthetic matching your bridal jewelry, outfit colors, and skin tone. Add 'Bridal Makeup' to your booking request and mention your wedding dates in the notes."
+    question: "What party packages and trial consultations do you provide?",
+    answer: "Our Party Makeup service includes a dedicated consultation session to design a tailored aesthetic matching your party theme, outfit colors, and skin tone. Add 'Party Makeup' to your booking request and mention your event dates in the notes."
   },
   {
     question: "What hygiene and sanitation protocols are practiced?",

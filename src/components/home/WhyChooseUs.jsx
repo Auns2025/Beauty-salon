@@ -17,7 +17,7 @@ export default function WhyChooseUs() {
     {
       icon: Home,
       title: "At-Home Concierge",
-      desc: "Prefer private sanctuary? Our certified beauty specialists travel to your residence across Lahore with complete salon equipment and fresh linens."
+      desc: "Prefer private sanctuary? Our certified beauty specialists travel to your residence across Dubai & Sharjah with complete salon equipment and fresh linens."
     },
     {
       icon: CalendarCheck,

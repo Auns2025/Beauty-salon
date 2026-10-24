@@ -14,13 +14,13 @@ export const SERVICE_CATEGORIES = [
   "Waxing",
   "Manicure & Pedicure",
   "Massage",
-  "Bridal Makeup",
+  "Party Makeup",
 ];
 
 export const STYLISTS = [
   { id: "any", name: "Any Available", role: "Next Available Master Artist", note: "Recommended for earliest appointment in Dubai & Sharjah" },
   { id: "sana", name: "Sana", role: "Senior Hair & Colour Stylist", note: "Specialist in global colour, balayage & hair transformations" },
-  { id: "hira", name: "Hira", role: "Bridal & Haute Glam Artist", note: "Specialist in signature bridal couture makeup & evening glam" },
+  { id: "hira", name: "Hira", role: "Party & Haute Glam Artist", note: "Specialist in signature party couture makeup & evening glam" },
   { id: "mehwish", name: "Mehwish", role: "Dermal Aesthetics & Nail Expert", note: "Specialist in 24K gold facials & acrylic gel nail artistry" },
 ];
 
@@ -415,7 +415,7 @@ export const SERVICES = [
     name: "Haircut & Styling",
     shortDesc: "Bespoke cut, layers, wash and editorial blow-dry finish",
     fullDesc: "A personalized aesthetic consultation tailored to your facial geometry, followed by precision cutting, botanical cleansing, lipid nourishment, and our signature salon blow-dry finish.",
-    price: 60,
+    price: 120,
     durationMinutes: 45,
     points: 4,
     image: "/images/services/haircut-styling.jpg",
@@ -446,7 +446,7 @@ export const SERVICES = [
     price: 150,
     durationMinutes: 90,
     points: 8,
-    image: "/images/services/keratin-spa.jpg",
+    image: "/images/services/Keratin and Hair Spa Treatments.png",
     featured: true,
     tag: "Restorative"
   },
@@ -459,7 +459,7 @@ export const SERVICES = [
     price: 80,
     durationMinutes: 50,
     points: 5,
-    image: "/images/services/keratin-spa.jpg",
+    image: "/images/services/Luxurious Mint Hair Spa Treatment.jpg",
     featured: false,
     tag: "Summer Hydration"
   },
@@ -473,7 +473,7 @@ export const SERVICES = [
     fullDesc: "Luxury multi-dimensional hair coloring utilizing ammonia-free European pigments. Includes toning glaze, fiber-protecting bond builder, and gloss rinse for radiant reflection (Package 8).",
     price: 369,
     durationMinutes: 180,
-    image: "/images/services/hair-colour.jpg",
+    image: "/images/services/Salon Balayage in Progress.jpg",
     featured: true,
     tag: "Package 8 Feature"
   },
@@ -486,7 +486,7 @@ export const SERVICES = [
     price: 70,
     durationMinutes: 45,
     points: 4,
-    image: "/images/services/hair-colour.jpg",
+    image: "/images/services/Precision Root Touch-Up in the Salon.jpg",
     featured: false,
     tag: "Color Refresh"
   },
@@ -527,7 +527,7 @@ export const SERVICES = [
     price: 60,
     durationMinutes: 30,
     points: 3,
-    image: "/images/services/glow-facial.jpg",
+    image: "/images/services/Relaxing Facial Spa Treatment.jpg",
     featured: false,
     tag: "Essential Glow"
   },
@@ -540,7 +540,7 @@ export const SERVICES = [
     price: 120,
     durationMinutes: 60,
     points: 6,
-    image: "/images/services/whitening-facial.jpg",
+    image: "/images/services/Relaxing Facial Mask Treatment.jpg",
     featured: false,
     tag: "Illuminating"
   },
@@ -555,7 +555,7 @@ export const SERVICES = [
     price: 15,
     durationMinutes: 10,
     points: 1,
-    image: "/images/services/threading.jpg",
+    image: "/images/services/Close-Up Eyebrow Threading in a Warm Salon.jpg",
     featured: false,
     tag: "Precision"
   },
@@ -568,24 +568,24 @@ export const SERVICES = [
     price: 40,
     durationMinutes: 25,
     points: 3,
-    image: "/images/services/threading.jpg",
+    image: "/images/services/Relaxing Full-Face Threading Treatment.jpg",
     featured: false,
     tag: "Express"
   },
 
   // 6. Waxing
-  {
-    id: "w-pkg7",
-    category: "Waxing",
-    name: "Full Body, Face & Bikini Waxing",
-    shortDesc: "Complete all-over silky smooth peel-off waxing",
-    fullDesc: "Ultra-hygienic full body waxing ritual combining full body, full face, and full bikini waxing with hypoallergenic low-temperature peel-off wax (Package 7).",
-    price: 180,
-    durationMinutes: 90,
-    image: "/images/services/full-wax.jpg",
-    featured: true,
-    tag: "Package 7 Feature"
-  },
+  // {
+  //   id: "w-pkg7",
+  //   category: "Waxing",
+  //   name: "Full Body, Face ",
+  //   shortDesc: "Complete all-over silky smooth peel-off waxing",
+  //   fullDesc: "Ultra-hygienic full body waxing ritual combining full body, full face, and full bikini waxing with hypoallergenic low-temperature peel-off wax (Package 7).",
+  //   price: 180,
+  //   durationMinutes: 90,
+  //   image: "/images/services/full-wax.jpg",
+  //   featured: true,
+  //   tag: "Package 7 Feature"
+  // },
   {
     id: "w1",
     category: "Waxing",
@@ -595,7 +595,7 @@ export const SERVICES = [
     price: 75,
     durationMinutes: 45,
     points: 7,
-    image: "/images/services/full-wax.jpg",
+    image: "/images/services/Professional Spa Waxing Treatment.jpg",
     featured: false,
     tag: "Silky Smooth"
   },
@@ -621,7 +621,7 @@ export const SERVICES = [
     fullDesc: "Deluxe hand and foot ritual including cuticle care, exfoliation scrub, high-shine gel polish and soothing foot massage (Package 10).",
     price: 180,
     durationMinutes: 90,
-    image: "/images/services/pedicure.jpg",
+    image: "/images/services/Luxury Spa Manicure and Pedicure.jpg",
     featured: true,
     tag: "Package 10 Feature"
   },
@@ -634,7 +634,7 @@ export const SERVICES = [
     price: 45,
     durationMinutes: 35,
     points: 3,
-    image: "/images/services/manicure.jpg",
+    image: "/images/services/Spa Manicure with Soft Pink Nails.jpg",
     featured: false,
     tag: "Classic Care"
   },
@@ -647,7 +647,7 @@ export const SERVICES = [
     price: 55,
     durationMinutes: 40,
     points: 3,
-    image: "/images/services/pedicure.jpg",
+    image: "/images/services/Luxurious Spa Pedicure Treatment.jpg",
     featured: false,
     tag: "Foot Wellness"
   },
@@ -662,46 +662,46 @@ export const SERVICES = [
     price: 40,
     durationMinutes: 20,
     points: 2,
-    image: "/images/services/pedicure.jpg",
+    image: "/images/services/Candlelit Foot Massage Retreat.jpg",
     featured: false,
     tag: "Relaxing"
   },
-  {
-    id: "msg-body",
-    category: "Massage",
-    name: "Full Body Relaxation Massage",
-    shortDesc: "Swedish / Aromatherapy tension release",
-    fullDesc: "Holistic full body tension release utilizing warm essential oils, gentle flowing strokes, and targeted acupressure to dissolve stress.",
-    price: 140,
-    durationMinutes: 60,
-    points: 8,
-    image: "/images/services/glow-facial.jpg",
-    featured: false,
-    tag: "Pure Bliss"
-  },
+  // {
+  //   id: "msg-body",
+  //   category: "Massage",
+  //   name: "Full Body Relaxation Massage",
+  //   shortDesc: "Swedish / Aromatherapy tension release",
+  //   fullDesc: "Holistic full body tension release utilizing warm essential oils, gentle flowing strokes, and targeted acupressure to dissolve stress.",
+  //   price: 140,
+  //   durationMinutes: 60,
+  //   points: 8,
+  //   image: "/images/services/glow-facial.jpg",
+  //   featured: false,
+  //   tag: "Pure Bliss"
+  // },
 
-  // 9. Bridal Makeup
+  // 9. Party Makeup
   {
     id: "m2",
-    category: "Bridal Makeup",
-    name: "Bridal Makeup — Luminous Velvet Glam",
-    shortDesc: "HD bridal couture look with advance consultation",
-    fullDesc: "The pinnacle of bridal opulence. High-definition flawless complexion artistry, intricate eye sculpting, dupatta and jewelry placement assistance, plus an advance consultation session.",
-    price: 450,
+    category: "Party Makeup",
+    name: "Couture Party Makeup — Luminous Velvet Glam",
+    shortDesc: "HD couture party look with advance consultation",
+    fullDesc: "The pinnacle of party opulence. High-definition flawless complexion artistry, intricate eye sculpting, dupatta and jewelry placement assistance, plus an advance consultation session.",
+    price: 350,
     durationMinutes: 180,
-    image: "/images/gallery/gal-bridal-2.jpg",
+    image: "/images/services/Bridal Lipstick Application in a Glamorous Studio.jpg",
     featured: true,
     tag: "Haute Couture"
   },
   {
     id: "m1",
-    category: "Bridal Makeup",
-    name: "Party Makeup",
+    category: "Party Makeup",
+    name: "Signature Party Makeup",
     shortDesc: "Soft glam or full glam with mink-effect lashes",
     fullDesc: "Luminous, photographic event makeup featuring custom undertone matching, waterproof contouring, mink-effect lash application, and 12-hour makeup lock-in setting.",
-    price: 180,
+    price: 250,
     durationMinutes: 75,
-    image: "/images/services/party-makeup.jpg",
+    image: "/images/gallery/gal-bridal-2.jpg",
     featured: true,
     tag: "Evening Glam"
   }
