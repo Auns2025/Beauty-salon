@@ -26,7 +26,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
+    { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     // { name: 'Book', path: '/booking' },
     { name: 'Gallery', path: '/gallery' },
@@ -53,9 +53,9 @@ export default function Navbar() {
             {/* Brand Logo */}
             <Link
               to="/"
-              className="group flex items-center gap-2.5 focus:outline-none focus:ring-1 focus:ring-gold"
+              className="group flex items-center gap-3 focus:outline-none focus:ring-1 focus:ring-gold"
             >
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gold/60 overflow-hidden flex items-center justify-center bg-chocolate group-hover:border-gold transition-colors flex-shrink-0 shadow-sm">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-gold/60 overflow-hidden flex items-center justify-center bg-chocolate group-hover:border-gold transition-colors flex-shrink-0 shadow-sm">
                 <img
                   src="/favicon.png"
                   alt="S&M Home Beauty Salon Logo"
@@ -128,9 +128,9 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-30 md:hidden bg-espresso-900/98 backdrop-blur-xl pt-24 px-6 pb-8 flex flex-col justify-between">
-          <div className="flex flex-col gap-6">
-            <div className="text-[10px] uppercase tracking-[0.25em] text-gold/60 border-b border-gold/15 pb-2">
+        <div className="fixed inset-0 z-30 md:hidden bg-ivory pt-28 px-6 pb-8 flex flex-col justify-between overflow-y-auto">
+          <div className="flex flex-col gap-5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-gold/80 border-b border-gold/20 pb-2">
               Menu Navigation
             </div>
             {navLinks.map((link) => (
@@ -138,7 +138,7 @@ export default function Navbar() {
                 key={link.name}
                 to={link.path}
                 className={`text-lg font-sans uppercase font-bold tracking-wider py-2 flex items-center justify-between ${
-                  isActive(link.path) ? 'text-gold' : 'text-ivory hover:text-gold'
+                  isActive(link.path) ? 'text-gold' : 'text-black hover:text-gold'
                 }`}
               >
                 <span>{link.name}</span>
@@ -147,9 +147,9 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="pt-6 border-t border-gold/15 flex flex-col gap-3">
+          <div className="pt-6 border-t border-gold/20 flex flex-col gap-3">
             {selectedServices.length > 0 && (
-              <div className="text-xs text-gold flex items-center justify-between bg-chocolate p-3 border border-gold/20">
+              <div className="text-xs text-gold flex items-center justify-between bg-chocolate/10 p-3 border border-gold/30 rounded">
                 <span>Selected Services</span>
                 <span className="font-bold">{selectedServices.length} items</span>
               </div>
@@ -159,7 +159,7 @@ export default function Navbar() {
                 Book Appointment
               </Button>
             </Link>
-            <div className="text-center text-[10px] text-ivory/50 tracking-wider pt-2">
+            <div className="text-center text-[10px] text-black/50 tracking-wider pt-2">
               {BUSINESS_CONFIG.hours.display}
             </div>
           </div>

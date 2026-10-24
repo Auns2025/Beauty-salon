@@ -13,8 +13,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-gold/15">
           {/* Brand Manifesto */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-flex items-center gap-2.5 mb-4 group">
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gold/60 overflow-hidden flex items-center justify-center bg-chocolate flex-shrink-0 shadow-sm group-hover:border-gold transition-colors">
+            <Link to="/" className="inline-flex items-center gap-3 mb-4 group">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-gold/60 overflow-hidden flex items-center justify-center bg-chocolate flex-shrink-0 shadow-sm group-hover:border-gold transition-colors">
                 <img
                   src="/favicon.png"
                   alt="S&M Home Beauty Salon Logo"
